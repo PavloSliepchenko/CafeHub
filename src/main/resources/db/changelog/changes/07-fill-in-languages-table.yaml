@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: fill-in-languages-table
+      author: PavloSliepchenko
+      changes:
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "Ukrainian"
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "English"
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "Polish"
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "Russian"
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "French"
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "German"
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "Turkish"
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "Chinese"
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "Italian"
+        - insert:
+            tableName: languages
+            columns:
+              - column:
+                  name: name
+                  value: "Portuguese"

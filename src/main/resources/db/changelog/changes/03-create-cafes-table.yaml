@@ -1,0 +1,84 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-cafes-table
+      author: PavloSliepchenko
+      changes:
+        - createTable:
+            tableName: cafes
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: work_hours_week_days
+                  type: varchar(255)
+              - column:
+                  name: work_hours_weekends
+                  type: varchar(255)
+              - column:
+                  name: score
+                  type: int
+              - column:
+                  name: url_of_image
+                  type: varchar(255)
+              - column:
+                  name: web_site
+                  type: varchar(255)
+              - column:
+                  name: coworking
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vegan
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: pet_friendly
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: average_bill
+                  type: DECIMAL
+              - column:
+                  name: child_zone
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: smoking_friendly
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_deleted
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false

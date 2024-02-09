@@ -1,0 +1,689 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-cafes
+      author: PavloSliepchenko
+      changes:
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "First Point"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Ярославська 14/20"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 21:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 9:00 до 21:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1i9o6Z3OdKzRhd9AbE6w77mjldQhROAG5/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/firstpointcoffee/?igshid=8x1kpl73le8q"
+              - column:
+                  name: pet_friendly
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 53.2
+              - column:
+                  name: smoking_friendly
+                  value: 1
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Blur"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Мечникова 5"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 21:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 9:00 до 21:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1Wfq02cXEP_Y-KJL8T2KF3odZy7qYfWNE/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/blurcoffeeshop/?igshid=gxgcc0603jl2"
+              - column:
+                  name: vegan
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 60
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Octo"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Мечникова 5"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 21:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 10:00 до 21:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1OPomLHGeGPVWLEQXZ9MrK2D_iQGwtnIs/view?usp=sharing"
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: vegan
+                  value: 1
+              - column:
+                  name: smoking_friendly
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 60
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Blue Cup"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Євгена Чикаленка, 5"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 21:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 9:00 до 21:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1esXJwhZVeFusFZfDLXwlRrNlOKQtN-83/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.facebook.com/TheBlueCupCoffee"
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 60
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Right"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Січових Стрільців 9в"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 21:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 9:00 до 21:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1qjPvVcHkjboCzbEZi5AdZ2Fru6VjldNa/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.facebook.com/rightcoffeebar"
+              - column:
+                  name: pet_friendly
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 60
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Без дверей"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Січових Стрільців 10"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 7:00 до 22:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/13CpcvSgB8CBB4sZFHBaZd3p55lGIJBU_/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://bezdvereyespressobar.choiceqr.com/?fbclid=IwAR3O5c00W9Rspf-Xq7cgZDl2mifig1y6-naT_080cCMXrkwBKRkAi0vPECg"
+              - column:
+                  name: vegan
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 100
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "One Love"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Велика Васильківська 100, PinchukArtCentre, ЦУМ (6 та -1 поверхи)"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 21:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 10:00 до 21:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1fXo6rwwXeJi7GpqE0BlUHftaatNqQvDn/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://onelove.ua"
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 100
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Frank"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "провулок Євгена Гуцала, 3"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 20:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 10:00 до 20:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1Zt0rImxVHgLvQU0irrmzto5TaotW7uUT/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.facebook.com/FrankKyiv"
+              - column:
+                  name: average_bill
+                  value: 60
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "16 coffee"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Кропивницького 16"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 19:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 9:00 до 20:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1hs2KK6EAfOVDeBATqUZ24tBq4s2D625M/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/16.coffee"
+              - column:
+                  name: pet_friendly
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 60
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Каштан"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Рейтарська 9Б"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 21:30"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 9:00 до 21:30"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1ix2Nnym6Wt-l_fNhhboM9DyeblFvfRM9/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/kashtancoffee"
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Cafe Boutique"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Саксаганського 102"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 19:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 11:00 до 19:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1isUyiy88aB_nWzCJeXOwAr4Wlfc7v-2v/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/cafeboutique.ua"
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Cafe Boutique"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул.Олександра Кониського, 16"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 19:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 11:00 до 19:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1isUyiy88aB_nWzCJeXOwAr4Wlfc7v-2v/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/cafeboutique.ua"
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Cafe Boutique"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Хорива 4"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 19:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 11:00 до 19:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1isUyiy88aB_nWzCJeXOwAr4Wlfc7v-2v/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/cafeboutique.ua"
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Ta kava"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Велика Васильківська 43/16"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1dbE3ebyE5wexxYEQjy7PTkEtzm1iQpuU/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/takava_coffeebuffet"
+              - column:
+                  name: vegan
+                  value: 1
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Ta kava"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Сагайдачного 39"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1dbE3ebyE5wexxYEQjy7PTkEtzm1iQpuU/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/takava_coffeebuffet"
+              - column:
+                  name: vegan
+                  value: 1
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Ta kava"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Дніпровська набережна 12"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1dbE3ebyE5wexxYEQjy7PTkEtzm1iQpuU/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/takava_coffeebuffet"
+              - column:
+                  name: vegan
+                  value: 1
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Yellow Place"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Мечникова 9"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 20:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 8:00 до 20:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1DaK4SahU34xHRzBX_2FvtboRDHtj4L-p/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/yellowplacecoffee"
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Yellow Place"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Дніпровська Набережна 14К"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 20:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 8:00 до 20:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1DaK4SahU34xHRzBX_2FvtboRDHtj4L-p/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/yellowplacecoffee"
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Idealist Coffee"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Ярославів Вал 15"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1g6cF8eBG-JuDdhasaDMZ-Lfg0k6XwK8x/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://idealist1.choiceqr.com/section:kava"
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Idealist Coffee"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Антоновича 44"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1g6cF8eBG-JuDdhasaDMZ-Lfg0k6XwK8x/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/idealistcoffee"
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Idealist Coffee"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Ярославська 58"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 9:00 до 18:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "Вихідний"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1g6cF8eBG-JuDdhasaDMZ-Lfg0k6XwK8x/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/idealistcoffee"
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Idealist Coffee"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "аеропорт “Бориспіль”"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 8:00 до 22:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1g6cF8eBG-JuDdhasaDMZ-Lfg0k6XwK8x/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/idealistcoffee"
+              - column:
+                  name: average_bill
+                  value: 70
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "Come and Stay"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "вул. Велика Васильківська, 23B"
+              - column:
+                  name: work_hours_week_days
+                  value: "з 8:00 до 21:00"
+              - column:
+                  name: work_hours_weekends
+                  value: "з 9:00 до 21:00"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1FbyngrJoK00xr0SJteOCjRAGeuwLWQVy/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/comeandstaycoffee"
+              - column:
+                  name: pet_friendly
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 70

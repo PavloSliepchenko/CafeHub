@@ -1,0 +1,419 @@
+databaseChangeLog:
+  - changeSet:
+      id: set-languages.yaml
+      author: PavloSliepchenko
+      changes:
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: language_id
+                  value: 2
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: language_id
+                  value: 1
+        - insert:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: language_id
+                  value: 2
