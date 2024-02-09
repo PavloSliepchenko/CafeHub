@@ -1,5 +1,6 @@
 package com.example.cafehub.model;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
@@ -53,15 +54,21 @@ public class Cafe {
     @OneToMany(mappedBy = "cafe", fetch = FetchType.EAGER)
     private List<Comment> comments;
     private String webSite;
-    private boolean coworking;
-    private boolean vegan;
-    private boolean petFriendly;
+    @Column(nullable = false)
+    private boolean coworking = false;
+    @Column(nullable = false)
+    private boolean vegan = false;
+    @Column(nullable = false)
+    private boolean petFriendly = false;
     private BigDecimal averageBill;
-    @Column
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Column(name = "images")
+    @CollectionTable(name = "images", joinColumns = @JoinColumn(name = "cafe_id"))
     private List<String> images;
-    private boolean childZone;
-    private boolean smokingFriendly;
+    @Column(nullable = false)
+    private boolean childZone = false;
+    @Column(nullable = false)
+    private boolean smokingFriendly = false;
     @Column(nullable = false)
     private boolean isDeleted = false;
 }

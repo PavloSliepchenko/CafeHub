@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-cafes_languages-table
+      author: PavloSliepchenko
+      changes:
+        - createTable:
+            tableName: cafes_languages
+            columns:
+              - column:
+                  name: cafe_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: language_id
+                  type: bigint
+                  constraints:
+                    nullable: false
