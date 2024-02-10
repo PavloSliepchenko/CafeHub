@@ -36,6 +36,9 @@ databaseChangeLog:
               - column:
                   name: smoking_friendly
                   value: 1
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -66,6 +69,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 60
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -99,6 +105,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 60
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -129,6 +138,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 60
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -159,6 +171,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 60
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -189,6 +204,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 100
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -219,6 +237,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 100
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -246,6 +267,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 60
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -276,6 +300,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 60
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -306,6 +333,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -333,6 +363,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -360,6 +393,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -387,6 +423,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -420,6 +459,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -453,6 +495,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -486,6 +531,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -516,6 +564,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -546,6 +597,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -576,6 +630,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -603,6 +660,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -630,6 +690,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -657,6 +720,9 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
         - insert:
             tableName: cafes
             columns:
@@ -687,3 +753,6 @@ databaseChangeLog:
               - column:
                   name: average_bill
                   value: 70
+              - column:
+                  name: score
+                  value: 0
