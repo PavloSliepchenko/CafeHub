@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: alter-users-table
+      author: PavloSliepchenko
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: role
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
