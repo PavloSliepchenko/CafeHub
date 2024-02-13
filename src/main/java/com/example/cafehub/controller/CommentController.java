@@ -38,6 +38,14 @@ public class CommentController {
         return commentService.getAllCommentByUserId(userId);
     }
 
+    @GetMapping(value = "{commentId}")
+    @PreAuthorize("hasAuthority('USER')")
+    public CommentResponseDto getCommentById(Authentication authentication,
+                                             @PathVariable Long commentId) {
+        User user = (User) authentication.getPrincipal();
+        return commentService.getCommentById(user.getId(), commentId);
+    }
+
     @PreAuthorize("hasAuthority('USER')")
     @PutMapping(value = "/{commentId}")
     public CommentResponseDto updateComment(Authentication authentication,
@@ -47,9 +55,16 @@ public class CommentController {
         return commentService.update(user.getId(), commentId, commentDto);
     }
 
-    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping(value = "/{commentId}")
     public void deleteComment(@PathVariable Long commentId) {
         commentService.deleteComment(commentId);
+    }
+
+    @PreAuthorize("hasAuthority('USER')")
+    @DeleteMapping(value = "/user/{commentId}")
+    public void deleteCommentByUser(Authentication authentication, @PathVariable Long commentId) {
+        User user = (User) authentication.getPrincipal();
+        commentService.deleteCommentByUser(user.getId(), commentId);
     }
 }

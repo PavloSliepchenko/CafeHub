@@ -12,6 +12,7 @@ import com.example.cafehub.repository.CommentRepository;
 import com.example.cafehub.repository.UserRepository;
 import com.example.cafehub.service.CommentService;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,18 @@ public class CommentServiceImpl implements CommentService {
         return commentRepository.findAllByUserId(userId).stream()
                 .map(commentMapper::toDto)
                 .toList();
+    }
+
+    @Override
+    public CommentResponseDto getCommentById(Long userId, Long commentId) {
+        Comment comment = commentRepository.findByIdAndUserId(commentId, userId)
+                .orElseThrow(() ->
+                        new EntityNotFoundException(String.format(
+                                "User with id %s doesn't have a comment with id %s",
+                                userId,
+                                commentId
+                        )));
+        return commentMapper.toDto(comment);
     }
 
     @Override
@@ -68,5 +81,19 @@ public class CommentServiceImpl implements CommentService {
             throw new EntityNotFoundException("There is no comment with id " + commentId);
         }
         commentRepository.deleteById(commentId);
+    }
+
+    @Override
+    public void deleteCommentByUser(Long userId, Long commentId) {
+        Optional<Comment> comment = commentRepository.findByIdAndUserId(commentId, userId);
+        if (comment.isPresent()) {
+            commentRepository.deleteById(commentId);
+        } else {
+            throw new EntityNotFoundException(String.format(
+                    "User with id %s doesn't have a comment with id %s",
+                    userId,
+                    commentId
+            ));
+        }
     }
 }
