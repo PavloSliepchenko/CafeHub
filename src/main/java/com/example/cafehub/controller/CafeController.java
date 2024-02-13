@@ -9,6 +9,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,12 +43,14 @@ public class CafeController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasAuthority('ADMIN')")
     public CafeResponseDto addCafe(@Valid @RequestBody CreateCafeDto createCafeDto) {
         return cafeService.addCafe(createCafeDto);
     }
 
     @PutMapping(value = "/{cafeId}")
     @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasAuthority('ADMIN')")
     public CafeResponseDto updateCafeInfo(
             @PathVariable Long cafeId,
             @Valid @RequestBody CreateCafeDto createCafeDto
@@ -56,6 +59,7 @@ public class CafeController {
     }
 
     @DeleteMapping(value = "/{cafeId}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public void deleteCafe(@PathVariable Long cafeId) {
         cafeService.deleteCafe(cafeId);
     }
