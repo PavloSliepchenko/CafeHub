@@ -31,10 +31,7 @@ public class CafeServiceImpl implements CafeService {
 
     @Override
     public CafeResponseDto getCafeById(Long cafeId) {
-        Cafe cafe = cafeRepository.findById(cafeId)
-                .orElseThrow(() ->
-                        new EntityNotFoundException("There is no cafe with id " + cafeId));
-        return cafeMapper.toDto(cafe);
+        return cafeMapper.toDto(findCafeById(cafeId));
     }
 
     @Override
@@ -64,9 +61,12 @@ public class CafeServiceImpl implements CafeService {
 
     @Override
     public void deleteCafe(Long cafeId) {
-        if (!cafeRepository.existsById(cafeId)) {
-            throw new EntityNotFoundException("There is no cafe with id " + cafeId);
-        }
-        cafeRepository.deleteById(cafeId);
+        cafeRepository.delete(findCafeById(cafeId));
+    }
+
+    private Cafe findCafeById(Long cafeId) {
+        return cafeRepository.findById(cafeId)
+                .orElseThrow(() ->
+                        new EntityNotFoundException("There is no cafe with id " + cafeId));
     }
 }
