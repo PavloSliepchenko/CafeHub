@@ -1,0 +1,18 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-cafes_cuisines-table
+      author: PavloSliepchenko
+      changes:
+        - createTable:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: cuisines_id
+                  type: bigint
+                  constraints:
+                    nullable: false

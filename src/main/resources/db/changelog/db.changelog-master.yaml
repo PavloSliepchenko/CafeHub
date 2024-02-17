@@ -21,3 +21,11 @@ databaseChangeLog:
       file: db/changelog/changes/10-alter-users-table.yaml
   - include:
       file: db/changelog/changes/11-add-admin-user.yaml
+  - include:
+      file: db/changelog/changes/12-create-cuisines-table.yaml
+  - include:
+      file: db/changelog/changes/13-create-cafes_cuisines-table.yaml
+  - include:
+      file: db/changelog/changes/14-fill-in-cuisines-table.yaml
+  - include:
+      file: db/changelog/changes/15-set-cuisines-to-cafes.yaml

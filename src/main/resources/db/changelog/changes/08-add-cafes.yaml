@@ -16,14 +16,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Ярославська 14/20"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 21:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 9:00 до 21:00"
+                  name: close_at_weekdays
+                  value: '21:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '09:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/First+Point+Espresso+Bar/@50.4676746,30.5109534,18.61z/data=!4m6!3m5!1s0x40d4ce14b4b0191f:0x7e2440f43a54e2d4!8m2!3d50.467646!4d30.5116746!16s%2Fg%2F11b8vd6nb1?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1i9o6Z3OdKzRhd9AbE6w77mjldQhROAG5/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1dABRskc35_IzEB8Y5G-d5deuTQfuz66K/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/firstpointcoffee/?igshid=8x1kpl73le8q"
@@ -34,11 +43,29 @@ databaseChangeLog:
                   name: average_bill
                   value: 53.2
               - column:
-                  name: smoking_friendly
-                  value: 1
-              - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: parking
+                  value: 1
+              - column:
+                  name: terrace
+                  value: 1
+              - column:
+                  name: description
+                  value: "Затишна кав’ярня на Подолі, тут можна випити кави або купити її собі додому у зернах. Також є сніданки, випічка та солодощі. Можна приходити із домашніми тваринами. Цікаво, що перша концепція закладу – місце, звідки починається ваша подорож. Ми думаємо, що це дуже круто – випити каву перед довгою дорогою у хорошій компанії або ж зібратись на каву з друзями та разом придумати чергову круту мандрівку!"
         - insert:
             tableName: cafes
             columns:
@@ -52,14 +79,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Мечникова 5"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 21:00"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 9:00 до 21:00"
+                  name: close_at_weekdays
+                  value: '21:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '09:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Blur+Coffee/@50.4373712,30.5303935,18.35z/data=!4m6!3m5!1s0x40d4cf00dc6aaaab:0x97bf0ec91fd63c73!8m2!3d50.4373461!4d30.5312446!16s%2Fg%2F11gg_w2xg6?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1Wfq02cXEP_Y-KJL8T2KF3odZy7qYfWNE/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1ujIICZSaDKhr-HtSJ9Zy4IvWCu14-Com/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/blurcoffeeshop/?igshid=gxgcc0603jl2"
@@ -72,6 +108,31 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: parking
+                  value: 1
+              - column:
+                  name: romantic
+                  value: 1
+              - column:
+                  name: description
+                  value: "Крім класичних кавових рецептів тут є кава на рослинному молоці (купа видів), матча, какао, сезонні чаї з оригінальними смаками (ананас-імбир або полуниця-ваніль, наприклад), комбуча та ще безліч усього. Поїсти тут також є що: солодощі – від класичного наполеона до веганських десертів без цукру, сендвічі, тости, сніданки та ланчі. 
+                  У Блюр є власний магазинчик, де можна купити каву та усе для її приготування, журнали, блокноти, листівки, значки, футболки та подарункові сертифікати. А ще тут затишно: одну зі стін прикрашає ілюстрація з восьминогом та є купа рослин в інтер’єрі."
         - insert:
             tableName: cafes
             columns:
@@ -85,14 +146,26 @@ databaseChangeLog:
                   name: address
                   value: "вул. Мечникова 5"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 21:00"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 10:00 до 21:00"
+                  name: close_at_weekdays
+                  value: '21:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '10:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/OCTO+tower/@50.4373461,30.531028,19.19z/data=!4m6!3m5!1s0x40d4cf87060ac46d:0x4df0ff609a0894ca!8m2!3d50.4374164!4d30.5315639!16s%2Fg%2F11jj_l554c?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1OPomLHGeGPVWLEQXZ9MrK2D_iQGwtnIs/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1tFCgiuWXdrS06EnovrGmYn47m_cnwftQ/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://www.instagram.com/octotower"
               - column:
                   name: coworking
                   value: 1
@@ -100,14 +173,50 @@ databaseChangeLog:
                   name: vegan
                   value: 1
               - column:
-                  name: smoking_friendly
-                  value: 1
-              - column:
                   name: average_bill
                   value: 60
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: parking
+                  value: 1
+              - column:
+                  name: terrace
+                  value: 1
+              - column:
+                  name: family_holiday
+                  value: 1
+              - column:
+                  name: child_holiday
+                  value: 1
+              - column:
+                  name: birthday
+                  value: 1
+              - column:
+                  name: romantic
+                  value: 1
+              - column:
+                  name: business_meeting
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: description
+                  value: "Octo – креативний простір, який важко охарактеризувати одним словом. Це 6 поверхів, де на першому – магазин, кавовий бар та пекарня, на другому – кафе-коворкінг з терасою, на третьому – фотостудія, на четвертому та п’ятому – школа, на шостому – лекторій, а на останньому поверсі відкритий дах з видом на місто! Дуже стильний простір, де можна не тільки смачно поїсти і випити кави, але й попрацювати і повчитись."
         - insert:
             tableName: cafes
             columns:
@@ -121,14 +230,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Євгена Чикаленка, 5"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 21:00"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 9:00 до 21:00"
+                  name: close_at_weekdays
+                  value: '21:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '09:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/The+Blue+Cup+Coffee+Shop/@50.4472467,30.5184954,18.27z/data=!4m6!3m5!1s0x40d4ce57194d9561:0xa6cef1d2816e5184!8m2!3d50.4472124!4d30.5192351!16s%2Fg%2F11b6xbpzt5?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1esXJwhZVeFusFZfDLXwlRrNlOKQtN-83/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1KU4VpxSfCewGLNPSI_4Ps9TQoIIwULRr/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.facebook.com/TheBlueCupCoffee"
@@ -141,6 +259,21 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: description
+                  value: "Формат закладу, де сніданки подають сніданки цілий день. Тут ви знайдете класичну та альтернативну кавову, смачні солодощі власного виробництва: цукерки, печиво, брауні, чізкейки та торти. Торти, до речі, роблять на замовлення. А ще є вино та коктейлі."
         - insert:
             tableName: cafes
             columns:
@@ -154,14 +287,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Січових Стрільців 9в"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 21:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 9:00 до 21:00"
+                  name: close_at_weekdays
+                  value: '21:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '09:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Right+Coffee+Bar/@50.4557204,30.5032877,18.94z/data=!4m15!1m8!3m7!1s0x40d4ce6771d593af:0xab6088299562dbe2!2sSichovykh+Striltsiv+St,+9%D0%B2,+Kyiv,+04053!3b1!8m2!3d50.4555641!4d30.5037654!16s%2Fg%2F11r_mhfrg4!3m5!1s0x40d4ce67701b7399:0xad920eb44ce9d18e!8m2!3d50.4555641!4d30.5037654!16s%2Fg%2F11g8dkfvz0?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1qjPvVcHkjboCzbEZi5AdZ2Fru6VjldNa/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1Ip8__Y9ScKYcJDCz_8UhlGM99Mz24SPn/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.facebook.com/rightcoffeebar"
@@ -174,6 +316,27 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: board_games
+                  value: 1
+              - column:
+                  name: thematic_event
+                  value: 1
+              - column:
+                  name: description
+                  value: "Атмосферний кавовий-бар, де можна і смачну каву випити з десертом, і перекусити, і коктейль ввечері замовити. Тут іноді влаштовують невеликі вечірки і сюди можна з домашніми тваринами."
         - insert:
             tableName: cafes
             columns:
@@ -187,14 +350,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Січових Стрільців 10"
               - column:
-                  name: work_hours_week_days
-                  value: "з 7:00 до 22:00"
+                  name: open_from_weekdays
+                  value: '07:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 8:00 до 22:00"
+                  name: close_at_weekdays
+                  value: '22:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '08:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '22:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/%D0%91%D0%B5%D0%B7+%D0%94%D0%B2%D0%B5%D1%80%D0%B5%D0%B9+Espresso+Bar/@50.4559952,30.5038631,19.03z/data=!4m6!3m5!1s0x40d4ce6775dba7b9:0x4ddca05e1c11a4a7!8m2!3d50.4559776!4d30.5041596!16s%2Fg%2F11d_9byrmm?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/13CpcvSgB8CBB4sZFHBaZd3p55lGIJBU_/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1Iv4_mhvtYbv0U7tHye6veLGV04P-AljZ/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://bezdvereyespressobar.choiceqr.com/?fbclid=IwAR3O5c00W9Rspf-Xq7cgZDl2mifig1y6-naT_080cCMXrkwBKRkAi0vPECg"
@@ -207,6 +379,18 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: description
+                  value: "Pets friendly еспресо бар. Насправді, “Без дверей” – більше, ніж просто кав’ярня, адже тут можна поїсти салати, супи, сендвічі та бургери. Тут великий вибір авторських десертів: каннолі, морквяний торт, парі брест, бакський чізкейк тістечко “київський торт” та інші. З напоїв тут є кава, чаї, фреші, лимонади та коктейлі."
         - insert:
             tableName: cafes
             columns:
@@ -218,16 +402,25 @@ databaseChangeLog:
                   value: "Kyiv"
               - column:
                   name: address
-                  value: "вул. Велика Васильківська 100, PinchukArtCentre, ЦУМ (6 та -1 поверхи)"
+                  value: "вул. Велика Васильківська 100"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 21:00"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 10:00 до 21:00"
+                  name: close_at_weekdays
+                  value: '21:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '10:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/ONE+LOVE+espresso+bar/@50.4263014,30.5150087,18.01z/data=!4m6!3m5!1s0x40d4cf1e9b8730c9:0xabef85de445de798!8m2!3d50.4263342!4d30.5159503!16s%2Fg%2F11b6d778d0?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1fXo6rwwXeJi7GpqE0BlUHftaatNqQvDn/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1dB9h2NHamO4isDUUAwyWzLjsdUBq8czs/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://onelove.ua"
@@ -240,6 +433,180 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: parking
+                  value: 1
+              - column:
+                  name: business_meeting
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: child_holiday
+                  value: 1
+              - column:
+                  name: birthday
+                  value: 1
+              - column:
+                  name: description
+                  value: "У “One love” можна скуштувати якісну каву з найкращих фермерських плантацій. Є десерти, сніданки та перекуси. “One love” це ще й онлайн-магазин, де можна купити каву та всі необхідні аксесуари для її приготування."
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "One Love"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "PinchukArtCentre"
+              - column:
+                  name: open_from_weekdays
+                  value: '09:00:00'
+              - column:
+                  name: close_at_weekdays
+                  value: '21:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '10:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/ONE+LOVE+coffee/@50.4417906,30.5201497,17.84z/data=!3m1!5s0x40d4cefeef99a00f:0x939559484df72c58!4m6!3m5!1s0x40d4ceff684f2703:0xeb46b9f0c0e7aaea!8m2!3d50.4418339!4d30.5214486!16s%2Fg%2F11c205wn6w?entry=ttu"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1iya0-o-se77NUp62zxV_3zPS6x6_CfI8/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://onelove.ua"
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 100
+              - column:
+                  name: score
+                  value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: parking
+                  value: 1
+              - column:
+                  name: business_meeting
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: description
+                  value: "У “One love” можна скуштувати якісну каву з найкращих фермерських плантацій. Є десерти, сніданки та перекуси. “One love” це ще й онлайн-магазин, де можна купити каву та всі необхідні аксесуари для її приготування."
+        - insert:
+            tableName: cafes
+            columns:
+              - column:
+                  name: name
+                  value: "One Love"
+              - column:
+                  name: city
+                  value: "Kyiv"
+              - column:
+                  name: address
+                  value: "ЦУМ (6 та -1 поверхи)"
+              - column:
+                  name: open_from_weekdays
+                  value: '09:00:00'
+              - column:
+                  name: close_at_weekdays
+                  value: '21:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '10:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/ONE+LOVE+coffee+%D0%A6%D0%A3%D0%9C/@50.4453947,30.5195575,18.47z/data=!3m1!5s0x40d4ce5666b34575:0x963d79a82a34d809!4m6!3m5!1s0x40d4cf03a8ee1a27:0xa12a41e5a185e343!8m2!3d50.4454044!4d30.5203099!16s%2Fg%2F11c6vcgl21?entry=ttu"
+              - column:
+                  name: url_of_image
+                  value: "https://drive.google.com/file/d/1aUGjuyMlNlqDhIgpxrz6Y3PCYNcdhSqW/view?usp=sharing"
+              - column:
+                  name: web_site
+                  value: "https://onelove.ua"
+              - column:
+                  name: coworking
+                  value: 1
+              - column:
+                  name: average_bill
+                  value: 100
+              - column:
+                  name: score
+                  value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: parking
+                  value: 1
+              - column:
+                  name: business_meeting
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: child_holiday
+                  value: 1
+              - column:
+                  name: birthday
+                  value: 1
+              - column:
+                  name: description
+                  value: "У “One love” можна скуштувати якісну каву з найкращих фермерських плантацій. Є десерти, сніданки та перекуси. “One love” це ще й онлайн-магазин, де можна купити каву та всі необхідні аксесуари для її приготування."
         - insert:
             tableName: cafes
             columns:
@@ -253,14 +620,23 @@ databaseChangeLog:
                   name: address
                   value: "провулок Євгена Гуцала, 3"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 20:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 10:00 до 20:00"
+                  name: close_at_weekdays
+                  value: '20:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '10:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '20:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Frank+Coffee/@50.4315013,30.5412516,18.49z/data=!4m6!3m5!1s0x40d4cf0933f5e529:0xe45f64b2125b15a2!8m2!3d50.4312748!4d30.5418739!16s%2Fg%2F11cmmqp98d?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1Zt0rImxVHgLvQU0irrmzto5TaotW7uUT/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1JuNaChNkX_nv0MypTeUWv0Wl_FdX0kNs/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.facebook.com/FrankKyiv"
@@ -270,6 +646,24 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: description
+                  value: "Маленька, але дуже затишна та стильна кав’ярня. Тут можна випити каву свіжого обсмаження від київських Café Boutique. Оскільки кафе дуже маленьке власної кухні тут немає, але вони закуповують свіжі десерти та випічку у найкращих перевірених виробників."
         - insert:
             tableName: cafes
             columns:
@@ -283,14 +677,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Кропивницького 16"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 19:00"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 9:00 до 20:00"
+                  name: close_at_weekdays
+                  value: '19:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '09:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '20:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/16.coffee/@50.440625,30.524437,18.75z/data=!4m6!3m5!1s0x40d4cf362ce293a1:0x5534b1d14bea38c2!8m2!3d50.4403259!4d30.5253004!16s%2Fg%2F11ghp2llh5?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1hs2KK6EAfOVDeBATqUZ24tBq4s2D625M/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/19-kMojn5q2gwESwdz12FdllaRFcrcrE-/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/16.coffee"
@@ -303,6 +706,27 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: terrace
+                  value: 1
+              - column:
+                  name: description
+                  value: "Кав’ярня із стильним інтер’єром. Тут є класичні кавові напої: еспресо, допіо, капучино, флет-вайт , лате і подвійне капучино. Є цукерки та десерти. Можна приходити з домашніми тваринами."
         - insert:
             tableName: cafes
             columns:
@@ -316,14 +740,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Рейтарська 9Б"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 21:30"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 9:00 до 21:30"
+                  name: close_at_weekdays
+                  value: '21:30:00'
+              - column:
+                  name: open_from_weekends
+                  value: '09:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:30:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Kashtan+Coffee/@50.4509769,30.5125998,19.31z/data=!4m6!3m5!1s0x40d4ce5bd89eaaab:0xd633b4e835a13082!8m2!3d50.4508489!4d30.5127561!16s%2Fg%2F11g9ndh27v?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1ix2Nnym6Wt-l_fNhhboM9DyeblFvfRM9/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/11j4Fc6xcjijFqBe6nw1Ry2fU7_-98up6/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/kashtancoffee"
@@ -336,6 +769,30 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: board_games
+                  value: 1
+              - column:
+                  name: terrace
+                  value: 1
+              - column:
+                  name: description
+                  value: "Атмосферний заклад з ретро-інтер’єром. У меню є кава: еспресо, капучіно, лате, флет уайт та фільтр. А ще какао, каскара та комбуча. Сніданки подають до 20:00: скрамбл, панкейки, круасани, сирники та салати. “Каштан” відомий своїм спорт-клубом – у теплу пору року вони влаштовують вело та мото заїзди, чемпіонати з настільного тенісу та шахів."
         - insert:
             tableName: cafes
             columns:
@@ -349,14 +806,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Саксаганського 102"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 19:00"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 11:00 до 19:00"
+                  name: close_at_weekdays
+                  value: '19:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '11:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '19:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/search/Cafe+Boutique+%D0%B2%D1%83%D0%BB.+%D0%A1%D0%B0%D0%BA%D1%81%D0%B0%D0%B3%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE+102/@50.442975,30.4973183,18.07z?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1isUyiy88aB_nWzCJeXOwAr4Wlfc7v-2v/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1gkanbeOaTLNxTBxBHDRBaK5CUlOTZKTE/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/cafeboutique.ua"
@@ -366,6 +832,15 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: description
+                  value: "“Cafe Boutique” – це онлайн магазин та три офлайн магазини-кав’ярні, які спеціалізуються на каві свіжого обсмаження виробництва. Тут можна скуштувати та купити каву відомих брендів та різноманітні кавові аксесуари."
         - insert:
             tableName: cafes
             columns:
@@ -379,14 +854,23 @@ databaseChangeLog:
                   name: address
                   value: "вул.Олександра Кониського, 16"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 19:00"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 11:00 до 19:00"
+                  name: close_at_weekdays
+                  value: '19:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '11:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '19:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/CafeBoutique/@50.4499016,30.4936491,19.19z/data=!4m6!3m5!1s0x40d4cf951388bacf:0xd187bfb88ca47615!8m2!3d50.4498631!4d30.4939752!16s%2Fg%2F11h79swhjh?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1isUyiy88aB_nWzCJeXOwAr4Wlfc7v-2v/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1qp10WhIyygZJ7BGO4nhmeaWp5vSgxyEZ/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/cafeboutique.ua"
@@ -396,6 +880,15 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: description
+                  value: "“Cafe Boutique” – це онлайн магазин та три офлайн магазини-кав’ярні, які спеціалізуються на каві свіжого обсмаження виробництва. Тут можна скуштувати та купити каву відомих брендів та різноманітні кавові аксесуари."
         - insert:
             tableName: cafes
             columns:
@@ -409,14 +902,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Хорива 4"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 19:00"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 11:00 до 19:00"
+                  name: close_at_weekdays
+                  value: '19:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '11:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '19:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/CafeBoutique/@50.4646261,30.5129521,19.06z/data=!4m6!3m5!1s0x40d4ce6a5dcb1a9d:0x81c748be272123f8!8m2!3d50.4645441!4d30.5134404!16s%2Fg%2F1tph07rc?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1isUyiy88aB_nWzCJeXOwAr4Wlfc7v-2v/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/17TGJC6jt1wGj6iDKh1NKLUbFOYiuAlPK/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/cafeboutique.ua"
@@ -426,6 +928,15 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: description
+                  value: "“Cafe Boutique” – це онлайн магазин та три офлайн магазини-кав’ярні, які спеціалізуються на каві свіжого обсмаження виробництва. Тут можна скуштувати та купити каву відомих брендів та різноманітні кавові аксесуари."
         - insert:
             tableName: cafes
             columns:
@@ -439,14 +950,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Велика Васильківська 43/16"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 22:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 8:00 до 22:00"
+                  name: close_at_weekdays
+                  value: '22:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '08:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '22:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/search/Ta+kava+%D0%B2%D1%83%D0%BB.+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+43%2F16/@50.4358696,30.5157564,18.7z?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1dbE3ebyE5wexxYEQjy7PTkEtzm1iQpuU/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1fa0pCSOO7vrM7IMTZ5XOuacsebZkrS6X/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/takava_coffeebuffet"
@@ -462,6 +982,24 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: description
+                  value: "Невелика мережа кав’ярень, у яких можна випити каву, чай, какао, матчу та натуральне вино. З їжі тут є сніданки, салати, супи, закуски до вина, бургери та пасти. Ну і, звичайно, смачні десерти власного виробництва. Є магазин, у якому можна купити каву, чашки та усе для приготування кави вдома."
         - insert:
             tableName: cafes
             columns:
@@ -475,14 +1013,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Сагайдачного 39"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 22:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 8:00 до 22:00"
+                  name: close_at_weekdays
+                  value: '22:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '08:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '22:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/TAKAVA+4.0+Podil/@50.4624147,30.5190045,18.79z/data=!4m6!3m5!1s0x40d4cfceec348379:0x34650de9064c918d!8m2!3d50.4622783!4d30.5194708!16s%2Fg%2F11j2378s7j?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1dbE3ebyE5wexxYEQjy7PTkEtzm1iQpuU/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1Naq5s0zli3_CfZ3x_EQYIekOroS1weGR/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/takava_coffeebuffet"
@@ -498,6 +1045,24 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: description
+                  value: "Невелика мережа кав’ярень, у яких можна випити каву, чай, какао, матчу та натуральне вино. З їжі тут є сніданки, салати, супи, закуски до вина, бургери та пасти. Ну і, звичайно, смачні десерти власного виробництва. Є магазин, у якому можна купити каву, чашки та усе для приготування кави вдома."
         - insert:
             tableName: cafes
             columns:
@@ -511,14 +1076,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Дніпровська набережна 12"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 22:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 8:00 до 22:00"
+                  name: close_at_weekdays
+                  value: '22:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '08:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '22:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/TAKAVA+3.0+River+Mall/@50.4055487,30.6098036,17.76z/data=!4m6!3m5!1s0x40d4c51a05300e39:0xaf3cceb5907bef5f!8m2!3d50.4055782!4d30.6118415!16s%2Fg%2F11j4fwynnl?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1dbE3ebyE5wexxYEQjy7PTkEtzm1iQpuU/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1ppboGI_YH0EQmUMvF4HO0VGcKbw1tlAK/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/takava_coffeebuffet"
@@ -534,6 +1108,24 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: description
+                  value: "Невелика мережа кав’ярень, у яких можна випити каву, чай, какао, матчу та натуральне вино. З їжі тут є сніданки, салати, супи, закуски до вина, бургери та пасти. Ну і, звичайно, смачні десерти власного виробництва. Є магазин, у якому можна купити каву, чашки та усе для приготування кави вдома."
         - insert:
             tableName: cafes
             columns:
@@ -547,14 +1139,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Мечникова 9"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 20:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 8:00 до 20:00"
+                  name: close_at_weekdays
+                  value: '20:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '08:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '20:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Yellow+Place/@50.4378668,30.5335772,18.66z/data=!4m6!3m5!1s0x40d4cf074e905dc7:0x4ef5ac4028c2c49f!8m2!3d50.4379835!4d30.5341688!16s%2Fg%2F11c1sj9l57?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1DaK4SahU34xHRzBX_2FvtboRDHtj4L-p/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1E1AgLdsAjPxBAIFdpJvBKBtlF9QtCciS/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/yellowplacecoffee"
@@ -567,6 +1168,33 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: birthday
+                  value: 1
+              - column:
+                  name: terrace
+                  value: 1
+              - column:
+                  name: description
+                  value: "Дві кав’ярні з кавою від українських обсмажчиків The Barn та Colonna. Є сніданки (тости та сирники) і солодощі: круасани, цукерки, булочки, медовик та наполеон. У магазині можна придбати каву та аксесуари для заварювання."
         - insert:
             tableName: cafes
             columns:
@@ -580,14 +1208,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Дніпровська Набережна 14К"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 20:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 8:00 до 20:00"
+                  name: close_at_weekdays
+                  value: '20:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '08:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '20:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Dniprovska+Embankment,+14%D0%9A,+Kyiv,+02000/@50.4020033,30.6128655,18.65z/data=!4m6!3m5!1s0x40d4c5baee3de017:0x742e02a838313c7!8m2!3d50.4019681!4d30.6134189!16s%2Fg%2F11g021lg_2?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1DaK4SahU34xHRzBX_2FvtboRDHtj4L-p/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1ytvKpLLvevelkBvkHWIc__iSxmd6JxUi/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/yellowplacecoffee"
@@ -600,6 +1237,33 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: parking
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: birthday
+                  value: 1
+              - column:
+                  name: description
+                  value: "Дві кав’ярні з кавою від українських обсмажчиків The Barn та Colonna. Є сніданки (тости та сирники) і солодощі: круасани, цукерки, булочки, медовик та наполеон. У магазині можна придбати каву та аксесуари для заварювання."
         - insert:
             tableName: cafes
             columns:
@@ -613,14 +1277,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Ярославів Вал 15"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 22:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 8:00 до 22:00"
+                  name: close_at_weekdays
+                  value: '22:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '08:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '22:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Idealist+Coffee/@50.4512706,30.5092243,20.12z/data=!4m6!3m5!1s0x40d4cfb74a70bb49:0xb43ec396a0200cbc!8m2!3d50.4511856!4d30.5094908!16s%2Fg%2F11lh3w01cs?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1g6cF8eBG-JuDdhasaDMZ-Lfg0k6XwK8x/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1B1eHa09kqsMu5dDLn_ViEbOp634quBwS/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://idealist1.choiceqr.com/section:kava"
@@ -633,6 +1306,24 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: description
+                  value: "Мережа кав’ярень з якісною кавою власної обсмажки. Сніданки тут подають цілий день, але основні страви, супи, салати та закуски тут також є. Випити можна каву, чай та вино."
         - insert:
             tableName: cafes
             columns:
@@ -646,14 +1337,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Антоновича 44"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 22:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 8:00 до 22:00"
+                  name: close_at_weekdays
+                  value: '22:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '08:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '22:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Idealist+Coffee/@50.4337678,30.5128887,18.64z/data=!4m6!3m5!1s0x40d4cfb30e34e0e1:0xb760a075ddd72e4c!8m2!3d50.4336731!4d30.5132331!16s%2Fg%2F11j399yln6?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1g6cF8eBG-JuDdhasaDMZ-Lfg0k6XwK8x/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/16dai6u6dzb4Ny_eK8D747eokNNIxhBym/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/idealistcoffee"
@@ -663,6 +1363,21 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: description
+                  value: "Мережа кав’ярень з якісною кавою власної обсмажки. Сніданки тут подають цілий день, але основні страви, супи, салати та закуски тут також є. Випити можна каву, чай та вино."
         - insert:
             tableName: cafes
             columns:
@@ -676,14 +1391,17 @@ databaseChangeLog:
                   name: address
                   value: "вул. Ярославська 58"
               - column:
-                  name: work_hours_week_days
-                  value: "з 9:00 до 18:00"
+                  name: open_from_weekdays
+                  value: '09:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "Вихідний"
+                  name: close_at_weekdays
+                  value: '18:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/IDEALIST+COFFEE+CO+(%D0%91%D0%A6+Astarta)/@50.4718488,30.5190803,18.25z/data=!4m6!3m5!1s0x40d4cf294f2a7a39:0x9b36d5f8cb3e44d3!8m2!3d50.4717015!4d30.5195907!16s%2Fg%2F11q86h8_pj?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1g6cF8eBG-JuDdhasaDMZ-Lfg0k6XwK8x/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1b_YmzK8StqjxUcc4Dl5KhdtwxpoxU0Os/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/idealistcoffee"
@@ -693,6 +1411,27 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: wifi
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: description
+                  value: "Мережа кав’ярень з якісною кавою власної обсмажки. Сніданки тут подають цілий день, але основні страви, супи, салати та закуски тут також є. Випити можна каву, чай та вино."
         - insert:
             tableName: cafes
             columns:
@@ -706,14 +1445,23 @@ databaseChangeLog:
                   name: address
                   value: "аеропорт “Бориспіль”"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 22:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 8:00 до 22:00"
+                  name: close_at_weekdays
+                  value: '22:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '08:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '22:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Boryspil+International+Airport/@50.3382681,30.8899754,889m/data=!3m1!1e3!4m6!3m5!1s0x40d4e8fa667ec5d1:0x690a2c5d49d870da!8m2!3d50.338222!4d30.8939274!16zL20vMDh0dHB5?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1g6cF8eBG-JuDdhasaDMZ-Lfg0k6XwK8x/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1WvtFc8YJzkGJi0nBVnKfNY5Vpe_WIFbE/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/idealistcoffee"
@@ -723,6 +1471,24 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: description
+                  value: "Мережа кав’ярень з якісною кавою власної обсмажки. Сніданки тут подають цілий день, але основні страви, супи, салати та закуски тут також є. Випити можна каву, чай та вино."
         - insert:
             tableName: cafes
             columns:
@@ -736,14 +1502,23 @@ databaseChangeLog:
                   name: address
                   value: "вул. Велика Васильківська, 23B"
               - column:
-                  name: work_hours_week_days
-                  value: "з 8:00 до 21:00"
+                  name: open_from_weekdays
+                  value: '08:00:00'
               - column:
-                  name: work_hours_weekends
-                  value: "з 9:00 до 21:00"
+                  name: close_at_weekdays
+                  value: '21:00:00'
+              - column:
+                  name: open_from_weekends
+                  value: '09:00:00'
+              - column:
+                  name: close_at_weekends
+                  value: '21:00:00'
+              - column:
+                  name: url_to_google_maps
+                  value: "https://www.google.com/maps/place/Come+and+Stay/@50.4389889,30.5163498,306m/data=!3m1!1e3!4m6!3m5!1s0x40d4cefe966ddadb:0x422347d0264f7a7f!8m2!3d50.4390239!4d30.51767!16s%2Fg%2F11bw3dl4g4?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1FbyngrJoK00xr0SJteOCjRAGeuwLWQVy/view?usp=sharing"
+                  value: "https://drive.google.com/file/d/1g6OgV3_HI_AoeZr_b_19Ud0ZmMF1cKfZ/view?usp=sharing"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/comeandstaycoffee"
@@ -756,3 +1531,21 @@ databaseChangeLog:
               - column:
                   name: score
                   value: 0
+              - column:
+                  name: number_of_users_voted
+                  value: 0
+              - column:
+                  name: total_score
+                  value: 0
+              - column:
+                  name: fast_service
+                  value: 1
+              - column:
+                  name: business_lunch
+                  value: 1
+              - column:
+                  name: free_water
+                  value: 1
+              - column:
+                  name: description
+                  value: "Кав’ярня зі смачною кавою, сніданками та сендвічами. А ще можна купити каву у зернах додому та замовити торт із доставкою. Можна приходити з домашніми тваринами."

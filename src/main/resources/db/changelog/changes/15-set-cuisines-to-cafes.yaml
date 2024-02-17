@@ -1,0 +1,437 @@
+databaseChangeLog:
+  - changeSet:
+      id: set-cuisines-to-cafes
+      author: PavloSliepchenko
+      changes:
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: cuisines_id
+                  value: 1
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: cuisines_id
+                  value: 7
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: cuisines_id
+                  value: 2
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: cuisines_id
+                  value: 5
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: cuisines_id
+                  value: 1
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: cuisines_id
+                  value: 2
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: cuisines_id
+                  value: 3
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: cuisines_id
+                  value: 3
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: cuisines_id
+                  value: 7
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: cuisines_id
+                  value: 4
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: cuisines_id
+                  value: 1
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: cuisines_id
+                  value: 2
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: cuisines_id
+                  value: 5
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: cuisines_id
+                  value: 5
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: cuisines_id
+                  value: 5
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: cuisines_id
+                  value: 6
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: cuisines_id
+                  value: 8
+        - insert:
+            tableName: cafes_cuisines
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 25
+              - column:
+                  name: cuisines_id
+                  value: 6
