@@ -14,6 +14,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
+import java.time.LocalTime;
 import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -44,10 +45,18 @@ public class Cafe {
     )
     private List<Language> languages;
     @Column(nullable = false)
-    private String workHoursWeekDays;
+    private LocalTime openFromWeekdays;
     @Column(nullable = false)
-    private String workHoursWeekends;
-    private int score;
+    private LocalTime closeAtWeekdays;
+    private LocalTime openFromWeekends;
+    private LocalTime closeAtWeekends;
+    @Column(name = "score")
+    private BigDecimal score;
+    private BigDecimal numberOfUsersVoted;
+    @Column(name = "total_score")
+    private BigDecimal totalScore;
+    @Column(name = "url_to_google_maps")
+    private String urlToGoogleMaps;
     private String urlOfImage;
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
@@ -65,10 +74,40 @@ public class Cafe {
     @Column(name = "images")
     @CollectionTable(name = "images", joinColumns = @JoinColumn(name = "cafe_id"))
     private List<String> images;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "cafes_cuisines",
+            joinColumns = @JoinColumn(name = "cafe_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "cuisines_id", referencedColumnName = "id")
+    )
+    private List<Cuisine> cuisines;
     @Column(nullable = false)
-    private boolean childZone = false;
+    private boolean fastService = false;
     @Column(nullable = false)
-    private boolean smokingFriendly = false;
+    private boolean wifi = false;
+    @Column(nullable = false)
+    private boolean businessLunch = false;
+    @Column(nullable = false)
+    private boolean freeWater = false;
+    @Column(nullable = false)
+    private boolean boardGames = false;
+    @Column(nullable = false)
+    private boolean birthday = false;
+    @Column(nullable = false)
+    private boolean businessMeeting = false;
+    @Column(nullable = false)
+    private boolean childHoliday = false;
+    @Column(nullable = false)
+    private boolean romantic = false;
+    @Column(nullable = false)
+    private boolean thematicEvent = false;
+    @Column(nullable = false)
+    private boolean familyHoliday = false;
+    @Column(nullable = false)
+    private boolean parking = false;
+    @Column(nullable = false)
+    private boolean terrace = false;
+    private String description;
     @Column(nullable = false)
     private boolean isDeleted = false;
 }

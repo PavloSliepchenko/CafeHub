@@ -9,6 +9,8 @@ import org.springframework.data.domain.Pageable;
 public interface CafeService {
     List<CafeResponseDto> getAllCafes(Pageable pageable);
 
+    List<CafeResponseDto> getAllCafesInCity(String cityName, Pageable pageable);
+
     CafeResponseDto getCafeById(Long cafeId);
 
     CafeResponseDto addCafe(CreateCafeDto createCafeDto);

@@ -9,6 +9,7 @@ import com.example.cafehub.model.Cafe;
 import com.example.cafehub.repository.CafeRepository;
 import com.example.cafehub.repository.specification.CafeSpecificationBuilder;
 import com.example.cafehub.service.CafeService;
+import java.math.BigDecimal;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -30,6 +31,13 @@ public class CafeServiceImpl implements CafeService {
     }
 
     @Override
+    public List<CafeResponseDto> getAllCafesInCity(String cityName, Pageable pageable) {
+        return cafeRepository.findByCity(cityName, pageable).stream()
+                .map(cafeMapper::toDto)
+                .toList();
+    }
+
+    @Override
     public CafeResponseDto getCafeById(Long cafeId) {
         return cafeMapper.toDto(findCafeById(cafeId));
     }
@@ -37,7 +45,7 @@ public class CafeServiceImpl implements CafeService {
     @Override
     public CafeResponseDto addCafe(CreateCafeDto createCafeDto) {
         Cafe cafe = cafeMapper.toModel(createCafeDto);
-        cafe.setScore(0);
+        cafe.setScore(BigDecimal.ZERO);
         return cafeMapper.toDto(cafeRepository.save(cafe));
     }
 

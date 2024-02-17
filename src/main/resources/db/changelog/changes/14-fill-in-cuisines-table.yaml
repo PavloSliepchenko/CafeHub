@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: fill-in-cuisines-table
+      author: PavloSliepchenko
+      changes:
+        - insert:
+            tableName: cuisines
+            columns:
+              - column:
+                  name: name
+                  value: "Ukrainian"
+        - insert:
+            tableName: cuisines
+            columns:
+              - column:
+                  name: name
+                  value: "European"
+        - insert:
+            tableName: cuisines
+            columns:
+              - column:
+                  name: name
+                  value: "Author"
+        - insert:
+            tableName: cuisines
+            columns:
+              - column:
+                  name: name
+                  value: "Hosper"
+        - insert:
+            tableName: cuisines
+            columns:
+              - column:
+                  name: name
+                  value: "Healthy"
+        - insert:
+            tableName: cuisines
+            columns:
+              - column:
+                  name: name
+                  value: "Pastries and coffee"
+        - insert:
+            tableName: cuisines
+            columns:
+              - column:
+                  name: name
+                  value: "Pizza"
+        - insert:
+            tableName: cuisines
+            columns:
+              - column:
+                  name: name
+                  value: "Fast food"

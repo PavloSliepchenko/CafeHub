@@ -29,14 +29,29 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: work_hours_week_days
-                  type: varchar(255)
+                  name: open_from_weekdays
+                  type: TIME
               - column:
-                  name: work_hours_weekends
-                  type: varchar(255)
+                  name: close_at_weekdays
+                  type: TIME
+              - column:
+                  name: open_from_weekends
+                  type: TIME
+              - column:
+                  name: close_at_weekends
+                  type: TIME
               - column:
                   name: score
-                  type: int
+                  type: DECIMAL
+              - column:
+                  name: number_of_users_voted
+                  type: DECIMAL
+              - column:
+                  name: total_score
+                  type: DECIMAL
+              - column:
+                  name: url_to_google_maps
+                  type: varchar(500)
               - column:
                   name: url_of_image
                   type: varchar(255)
@@ -65,17 +80,86 @@ databaseChangeLog:
                   name: average_bill
                   type: DECIMAL
               - column:
-                  name: child_zone
+                  name: fast_service
                   type: boolean
                   defaultValueBoolean: false
                   constraints:
                     nullable: false
               - column:
-                  name: smoking_friendly
+                  name: wifi
                   type: boolean
                   defaultValueBoolean: false
                   constraints:
                     nullable: false
+              - column:
+                  name: business_lunch
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: free_water
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: board_games
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birthday
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: business_meeting
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: child_holiday
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: romantic
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: thematic_event
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: family_holiday
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: parking
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: terrace
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(1000)
               - column:
                   name: is_deleted
                   type: boolean
