@@ -1,8 +1,11 @@
 package com.example.cafehub.dto.cafe;
 
+import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 public record CafeSearchParametersDto(
+        @NotNull
+        String city,
         boolean openNow,
         String[] languages,
         boolean coworking,

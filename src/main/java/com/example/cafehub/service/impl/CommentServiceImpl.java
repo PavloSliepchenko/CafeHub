@@ -9,8 +9,8 @@ import com.example.cafehub.model.Comment;
 import com.example.cafehub.model.User;
 import com.example.cafehub.repository.CafeRepository;
 import com.example.cafehub.repository.CommentRepository;
-import com.example.cafehub.repository.UserRepository;
 import com.example.cafehub.service.CommentService;
+import java.time.LocalDateTime;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,7 +19,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CommentServiceImpl implements CommentService {
     private final CommentRepository commentRepository;
-    private final UserRepository userRepository;
     private final CafeRepository cafeRepository;
     private final CommentMapper commentMapper;
 
@@ -42,12 +41,12 @@ public class CommentServiceImpl implements CommentService {
         Cafe cafe = cafeRepository.findById(cafeId)
                 .orElseThrow(() ->
                         new EntityNotFoundException("There is no cafe with id " + cafeId));
-        User user = userRepository.findById(userId)
-                .orElseThrow(() ->
-                        new EntityNotFoundException("There is no user with id " + userId));
+        User user = new User();
+        user.setId(userId);
         Comment commentEntity = new Comment();
         commentEntity.setCafe(cafe);
         commentEntity.setUser(user);
+        commentEntity.setTime(LocalDateTime.now());
         commentEntity.setComment(commentDto.getComment());
         return commentMapper.toDto(commentRepository.save(commentEntity));
     }

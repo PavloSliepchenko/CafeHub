@@ -3,13 +3,16 @@ package com.example.cafehub.controller;
 import com.example.cafehub.dto.cafe.CafeResponseDto;
 import com.example.cafehub.dto.cafe.CafeSearchParametersDto;
 import com.example.cafehub.dto.cafe.CreateCafeDto;
+import com.example.cafehub.model.User;
 import com.example.cafehub.service.CafeService;
 import jakarta.validation.Valid;
+import java.math.BigDecimal;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,7 +46,8 @@ public class CafeController {
     }
 
     @GetMapping(value = "/search")
-    public List<CafeResponseDto> searchCafesByParameters(CafeSearchParametersDto parametersDto) {
+    public List<CafeResponseDto> searchCafesByParameters(
+            @Valid CafeSearchParametersDto parametersDto) {
         return cafeService.cafeSearch(parametersDto);
     }
 
@@ -62,6 +66,15 @@ public class CafeController {
             @Valid @RequestBody CreateCafeDto createCafeDto
     ) {
         return cafeService.updateCafeInfo(cafeId, createCafeDto);
+    }
+
+    @PostMapping(value = "/scores")
+    @PreAuthorize("hasAuthority('USER')")
+    public CafeResponseDto setScore(Authentication authentication,
+                                    @RequestParam Long cafeId,
+                                    @RequestParam BigDecimal score) {
+        User user = (User) authentication.getPrincipal();
+        return cafeService.setScore(user.getId(), cafeId, score);
     }
 
     @DeleteMapping(value = "/{cafeId}")

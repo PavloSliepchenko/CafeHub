@@ -6,8 +6,6 @@ import com.example.cafehub.model.Language;
 import jakarta.persistence.criteria.Join;
 import jakarta.persistence.criteria.Predicate;
 import java.math.BigDecimal;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +14,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CafeSpecifications {
+    public Specification<Cafe> inCity(String city) {
+        return (root, query, criteriaBuilder) ->
+                criteriaBuilder.equal(root.get("city"), city);
+    }
+
     public Specification<Cafe> hasLanguages(String[] languages) {
         return (root, query, criteriaBuilder) -> {
             Join<Cafe, Language> languagesJoin = root.join("languages");
@@ -123,21 +126,19 @@ public class CafeSpecifications {
                 criteriaBuilder.equal(root.get("terrace"), terrace);
     }
 
-    public Specification<Cafe> isOpenNow() {
+    public Specification<Cafe> isOpenNow(String city) {
         return (root, query, criteriaBuilder) -> {
-            DayOfWeek currentDayOfWeek = LocalDate.now().getDayOfWeek();
             LocalTime currentTime = LocalTime.now();
 
             Predicate openDuringWeekdays = criteriaBuilder.and(
-                    criteriaBuilder.equal(criteriaBuilder.function("dayofweek", Integer.class,
-                            root.get("openFromWeekdays")), currentDayOfWeek.getValue()),
+                    criteriaBuilder.equal(root.get("city"), city),
                     criteriaBuilder.lessThanOrEqualTo(root.get("openFromWeekdays"), currentTime),
                     criteriaBuilder.greaterThanOrEqualTo(root.get("closeAtWeekdays"), currentTime)
             );
 
             Predicate openDuringWeekends = criteriaBuilder.and(
-                    criteriaBuilder.equal(criteriaBuilder.function("dayofweek", Integer.class,
-                            criteriaBuilder.literal(1)), currentDayOfWeek.getValue()),
+                    criteriaBuilder.equal(root.get("city"), city),
+                    criteriaBuilder.isNotNull(root.get("openFromWeekends")),
                     criteriaBuilder.lessThanOrEqualTo(root.get("openFromWeekends"), currentTime),
                     criteriaBuilder.greaterThanOrEqualTo(root.get("closeAtWeekends"), currentTime)
             );

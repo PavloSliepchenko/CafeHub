@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create-comments-table
+      id: create-scores-table
       author: PavloSliepchenko
       changes:
         - createTable:
-            tableName: comments
+            tableName: scores
             columns:
               - column:
                   name: id
@@ -12,11 +12,6 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: false
-              - column:
-                  name: time
-                  type: TIMESTAMP
-                  constraints:
                     nullable: false
               - column:
                   name: user_id
@@ -29,11 +24,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: comment
-                  type: varchar(255)
-              - column:
-                  name: is_deleted
-                  type: boolean
-                  defaultValueBoolean: false
+                  name: score
+                  type: DECIMAL
                   constraints:
                     nullable: false
