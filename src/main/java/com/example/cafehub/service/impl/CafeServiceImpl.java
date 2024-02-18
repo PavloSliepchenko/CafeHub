@@ -6,11 +6,15 @@ import com.example.cafehub.dto.cafe.CreateCafeDto;
 import com.example.cafehub.exception.EntityNotFoundException;
 import com.example.cafehub.mapper.CafeMapper;
 import com.example.cafehub.model.Cafe;
+import com.example.cafehub.model.Score;
+import com.example.cafehub.model.User;
 import com.example.cafehub.repository.CafeRepository;
+import com.example.cafehub.repository.ScoreRepository;
 import com.example.cafehub.repository.specification.CafeSpecificationBuilder;
 import com.example.cafehub.service.CafeService;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -20,6 +24,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class CafeServiceImpl implements CafeService {
     private final CafeSpecificationBuilder specificationBuilder;
+    private final ScoreRepository scoreRepository;
     private final CafeRepository cafeRepository;
     private final CafeMapper cafeMapper;
 
@@ -65,6 +70,34 @@ public class CafeServiceImpl implements CafeService {
         return cafeRepository.findAll(cafeSpecification).stream()
                 .map(cafeMapper::toDto)
                 .toList();
+    }
+
+    @Override
+    public CafeResponseDto setScore(Long userId, Long cafeId, BigDecimal score) {
+        Optional<Score> scoreOptional = scoreRepository.findByUserIdAndCafeId(userId, cafeId);
+        Cafe cafe = findCafeById(cafeId);
+        if (scoreOptional.isEmpty()) {
+            User user = new User();
+            user.setId(userId);
+            Score scoreEntity = new Score();
+            scoreEntity.setCafe(cafe);
+            scoreEntity.setUser(user);
+            scoreEntity.setScore(score);
+            scoreRepository.save(scoreEntity);
+            cafe.setNumberOfUsersVoted(cafe.getNumberOfUsersVoted().add(BigDecimal.ONE));
+            cafe.setTotalScore(cafe.getTotalScore().add(score));
+            cafe.setScore(cafe.getTotalScore().divide(cafe.getNumberOfUsersVoted()));
+        } else {
+            Score scoreEntity = scoreOptional.get();
+            BigDecimal newTotalScore = cafe.getTotalScore()
+                    .subtract(scoreEntity.getScore())
+                    .add(score);
+            cafe.setTotalScore(newTotalScore);
+            cafe.setScore(newTotalScore.divide(cafe.getNumberOfUsersVoted()));
+            scoreEntity.setScore(score);
+            scoreRepository.save(scoreEntity);
+        }
+        return cafeMapper.toDto(cafeRepository.save(cafe));
     }
 
     @Override

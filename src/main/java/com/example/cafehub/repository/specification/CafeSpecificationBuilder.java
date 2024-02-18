@@ -19,6 +19,14 @@ public class CafeSpecificationBuilder {
                     cafeSpecifications.hasLanguages(searchParametersDto.languages()));
         }
 
+        if (searchParametersDto.city() != null) {
+            specification = specification == null
+                    ? Specification.where(cafeSpecifications.inCity(
+                    searchParametersDto.city()))
+                    : specification.and(cafeSpecifications.inCity(
+                    searchParametersDto.city()));
+        }
+
         if (searchParametersDto.averageBill() != null) {
             specification = specification == null
                     ? Specification.where(cafeSpecifications.hasAverageBillLessThanOrEqual(
@@ -164,8 +172,8 @@ public class CafeSpecificationBuilder {
 
         if (searchParametersDto.openNow()) {
             specification = specification == null
-                    ? Specification.where(cafeSpecifications.isOpenNow())
-                    : specification.and(cafeSpecifications.isOpenNow());
+                    ? Specification.where(cafeSpecifications.isOpenNow(searchParametersDto.city()))
+                    : specification.and(cafeSpecifications.isOpenNow(searchParametersDto.city()));
         }
         return specification == null ? Specification.where(null) : specification;
     }

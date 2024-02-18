@@ -8,24 +8,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.time.LocalDateTime;
+import java.math.BigDecimal;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.hibernate.annotations.SQLDelete;
-import org.hibernate.annotations.Where;
 
 @Data
 @Entity
-@Table(name = "comments")
-@Where(clause = "is_deleted = false")
-@SQLDelete(sql = "UPDATE comments SET is_deleted = true WHERE id = ?")
-public class Comment {
+@Table(name = "scores")
+public class Score {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
-    private LocalDateTime time;
     @ManyToOne
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
@@ -36,7 +30,6 @@ public class Comment {
     @EqualsAndHashCode.Exclude
     @JoinColumn(name = "cafe_id", nullable = false)
     private Cafe cafe;
-    private String comment;
     @Column(nullable = false)
-    private boolean isDeleted = false;
+    private BigDecimal score;
 }
