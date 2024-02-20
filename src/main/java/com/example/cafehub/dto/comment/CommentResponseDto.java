@@ -6,6 +6,9 @@ import lombok.Data;
 @Data
 public class CommentResponseDto {
     private Long id;
+    private Long cafeId;
+    private String cafeName;
+    private String urlOfImage;
     private String time;
     private UserResponseDto user;
     private String comment;
