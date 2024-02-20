@@ -38,6 +38,13 @@ public class CommentController {
         return commentService.getAllCommentByUserId(userId);
     }
 
+    @GetMapping(value = "/mine")
+    @PreAuthorize("hasAuthority('USER')")
+    public List<CommentResponseDto> getAllComments(Authentication authentication) {
+        User user = (User) authentication.getPrincipal();
+        return commentService.getAllCommentByUserId(user.getId());
+    }
+
     @GetMapping(value = "{commentId}")
     @PreAuthorize("hasAuthority('USER')")
     public CommentResponseDto getCommentById(Authentication authentication,
