@@ -31,3 +31,5 @@ databaseChangeLog:
       file: db/changelog/changes/15-set-cuisines-to-cafes.yaml
   - include:
       file: db/changelog/changes/16-create-scores-table.yaml
+  - include:
+      file: db/changelog/changes/17-create-users_cafes-table.yaml
