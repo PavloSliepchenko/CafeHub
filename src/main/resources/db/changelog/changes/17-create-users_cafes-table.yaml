@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users_cafes-table
+      author: PavloSliepchenko
+      changes:
+        - createTable:
+            tableName: users_cafes
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+              - column:
+                  name: cafe_id
+                  type: bigint
