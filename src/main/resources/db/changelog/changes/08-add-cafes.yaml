@@ -32,7 +32,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/First+Point+Espresso+Bar/@50.4676746,30.5109534,18.61z/data=!4m6!3m5!1s0x40d4ce14b4b0191f:0x7e2440f43a54e2d4!8m2!3d50.467646!4d30.5116746!16s%2Fg%2F11b8vd6nb1?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1dABRskc35_IzEB8Y5G-d5deuTQfuz66K/view?usp=sharing"
+                  value: "https://i.imgur.com/iPMWW5y.jpg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/firstpointcoffee/?igshid=8x1kpl73le8q"
@@ -95,7 +95,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Blur+Coffee/@50.4373712,30.5303935,18.35z/data=!4m6!3m5!1s0x40d4cf00dc6aaaab:0x97bf0ec91fd63c73!8m2!3d50.4373461!4d30.5312446!16s%2Fg%2F11gg_w2xg6?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1ujIICZSaDKhr-HtSJ9Zy4IvWCu14-Com/view?usp=sharing"
+                  value: "https://i.imgur.com/znCG1r0.jpg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/blurcoffeeshop/?igshid=gxgcc0603jl2"
@@ -162,7 +162,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/OCTO+tower/@50.4373461,30.531028,19.19z/data=!4m6!3m5!1s0x40d4cf87060ac46d:0x4df0ff609a0894ca!8m2!3d50.4374164!4d30.5315639!16s%2Fg%2F11jj_l554c?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1tFCgiuWXdrS06EnovrGmYn47m_cnwftQ/view?usp=sharing"
+                  value: "https://i.imgur.com/AaCMFIm.jpg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/octotower"
@@ -246,7 +246,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/The+Blue+Cup+Coffee+Shop/@50.4472467,30.5184954,18.27z/data=!4m6!3m5!1s0x40d4ce57194d9561:0xa6cef1d2816e5184!8m2!3d50.4472124!4d30.5192351!16s%2Fg%2F11b6xbpzt5?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1KU4VpxSfCewGLNPSI_4Ps9TQoIIwULRr/view?usp=sharing"
+                  value: "https://i.imgur.com/3Is5Tuo.jpg"
               - column:
                   name: web_site
                   value: "https://www.facebook.com/TheBlueCupCoffee"
@@ -303,7 +303,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Right+Coffee+Bar/@50.4557204,30.5032877,18.94z/data=!4m15!1m8!3m7!1s0x40d4ce6771d593af:0xab6088299562dbe2!2sSichovykh+Striltsiv+St,+9%D0%B2,+Kyiv,+04053!3b1!8m2!3d50.4555641!4d30.5037654!16s%2Fg%2F11r_mhfrg4!3m5!1s0x40d4ce67701b7399:0xad920eb44ce9d18e!8m2!3d50.4555641!4d30.5037654!16s%2Fg%2F11g8dkfvz0?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1Ip8__Y9ScKYcJDCz_8UhlGM99Mz24SPn/view?usp=sharing"
+                  value: "https://i.imgur.com/vgo5h3i.jpeg"
               - column:
                   name: web_site
                   value: "https://www.facebook.com/rightcoffeebar"
@@ -366,7 +366,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/%D0%91%D0%B5%D0%B7+%D0%94%D0%B2%D0%B5%D1%80%D0%B5%D0%B9+Espresso+Bar/@50.4559952,30.5038631,19.03z/data=!4m6!3m5!1s0x40d4ce6775dba7b9:0x4ddca05e1c11a4a7!8m2!3d50.4559776!4d30.5041596!16s%2Fg%2F11d_9byrmm?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1Iv4_mhvtYbv0U7tHye6veLGV04P-AljZ/view?usp=sharing"
+                  value: "https://i.imgur.com/tM8FXmA.jpeg"
               - column:
                   name: web_site
                   value: "https://bezdvereyespressobar.choiceqr.com/?fbclid=IwAR3O5c00W9Rspf-Xq7cgZDl2mifig1y6-naT_080cCMXrkwBKRkAi0vPECg"
@@ -420,7 +420,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/ONE+LOVE+espresso+bar/@50.4263014,30.5150087,18.01z/data=!4m6!3m5!1s0x40d4cf1e9b8730c9:0xabef85de445de798!8m2!3d50.4263342!4d30.5159503!16s%2Fg%2F11b6d778d0?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1dB9h2NHamO4isDUUAwyWzLjsdUBq8czs/view?usp=sharing"
+                  value: "https://i.imgur.com/iSGwY49.jpeg"
               - column:
                   name: web_site
                   value: "https://onelove.ua"
@@ -492,7 +492,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/ONE+LOVE+coffee/@50.4417906,30.5201497,17.84z/data=!3m1!5s0x40d4cefeef99a00f:0x939559484df72c58!4m6!3m5!1s0x40d4ceff684f2703:0xeb46b9f0c0e7aaea!8m2!3d50.4418339!4d30.5214486!16s%2Fg%2F11c205wn6w?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1iya0-o-se77NUp62zxV_3zPS6x6_CfI8/view?usp=sharing"
+                  value: "https://i.imgur.com/SMOOZHf.jpeg"
               - column:
                   name: web_site
                   value: "https://onelove.ua"
@@ -561,7 +561,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/ONE+LOVE+coffee+%D0%A6%D0%A3%D0%9C/@50.4453947,30.5195575,18.47z/data=!3m1!5s0x40d4ce5666b34575:0x963d79a82a34d809!4m6!3m5!1s0x40d4cf03a8ee1a27:0xa12a41e5a185e343!8m2!3d50.4454044!4d30.5203099!16s%2Fg%2F11c6vcgl21?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1aUGjuyMlNlqDhIgpxrz6Y3PCYNcdhSqW/view?usp=sharing"
+                  value: "https://i.imgur.com/BCOgF2X.jpeg"
               - column:
                   name: web_site
                   value: "https://onelove.ua"
@@ -636,7 +636,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Frank+Coffee/@50.4315013,30.5412516,18.49z/data=!4m6!3m5!1s0x40d4cf0933f5e529:0xe45f64b2125b15a2!8m2!3d50.4312748!4d30.5418739!16s%2Fg%2F11cmmqp98d?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1JuNaChNkX_nv0MypTeUWv0Wl_FdX0kNs/view?usp=sharing"
+                  value: "https://i.imgur.com/CI5lgXL.jpeg"
               - column:
                   name: web_site
                   value: "https://www.facebook.com/FrankKyiv"
@@ -693,7 +693,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/16.coffee/@50.440625,30.524437,18.75z/data=!4m6!3m5!1s0x40d4cf362ce293a1:0x5534b1d14bea38c2!8m2!3d50.4403259!4d30.5253004!16s%2Fg%2F11ghp2llh5?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/19-kMojn5q2gwESwdz12FdllaRFcrcrE-/view?usp=sharing"
+                  value: "https://i.imgur.com/shypsBX.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/16.coffee"
@@ -756,7 +756,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Kashtan+Coffee/@50.4509769,30.5125998,19.31z/data=!4m6!3m5!1s0x40d4ce5bd89eaaab:0xd633b4e835a13082!8m2!3d50.4508489!4d30.5127561!16s%2Fg%2F11g9ndh27v?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/11j4Fc6xcjijFqBe6nw1Ry2fU7_-98up6/view?usp=sharing"
+                  value: "https://i.imgur.com/t4dySM1.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/kashtancoffee"
@@ -822,7 +822,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/search/Cafe+Boutique+%D0%B2%D1%83%D0%BB.+%D0%A1%D0%B0%D0%BA%D1%81%D0%B0%D0%B3%D0%B0%D0%BD%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE+102/@50.442975,30.4973183,18.07z?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1gkanbeOaTLNxTBxBHDRBaK5CUlOTZKTE/view?usp=sharing"
+                  value: "https://i.imgur.com/7YvEND3.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/cafeboutique.ua"
@@ -870,7 +870,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/CafeBoutique/@50.4499016,30.4936491,19.19z/data=!4m6!3m5!1s0x40d4cf951388bacf:0xd187bfb88ca47615!8m2!3d50.4498631!4d30.4939752!16s%2Fg%2F11h79swhjh?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1qp10WhIyygZJ7BGO4nhmeaWp5vSgxyEZ/view?usp=sharing"
+                  value: "https://i.imgur.com/YuzSuXr.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/cafeboutique.ua"
@@ -918,7 +918,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/CafeBoutique/@50.4646261,30.5129521,19.06z/data=!4m6!3m5!1s0x40d4ce6a5dcb1a9d:0x81c748be272123f8!8m2!3d50.4645441!4d30.5134404!16s%2Fg%2F1tph07rc?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/17TGJC6jt1wGj6iDKh1NKLUbFOYiuAlPK/view?usp=sharing"
+                  value: "https://i.imgur.com/V9kJfEp.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/cafeboutique.ua"
@@ -966,7 +966,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/search/Ta+kava+%D0%B2%D1%83%D0%BB.+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0+%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+43%2F16/@50.4358696,30.5157564,18.7z?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1fa0pCSOO7vrM7IMTZ5XOuacsebZkrS6X/view?usp=sharing"
+                  value: "https://i.imgur.com/2oFDchX.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/takava_coffeebuffet"
@@ -1029,7 +1029,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/TAKAVA+4.0+Podil/@50.4624147,30.5190045,18.79z/data=!4m6!3m5!1s0x40d4cfceec348379:0x34650de9064c918d!8m2!3d50.4622783!4d30.5194708!16s%2Fg%2F11j2378s7j?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1Naq5s0zli3_CfZ3x_EQYIekOroS1weGR/view?usp=sharing"
+                  value: "https://i.imgur.com/isHXS6L.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/takava_coffeebuffet"
@@ -1092,7 +1092,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/TAKAVA+3.0+River+Mall/@50.4055487,30.6098036,17.76z/data=!4m6!3m5!1s0x40d4c51a05300e39:0xaf3cceb5907bef5f!8m2!3d50.4055782!4d30.6118415!16s%2Fg%2F11j4fwynnl?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1ppboGI_YH0EQmUMvF4HO0VGcKbw1tlAK/view?usp=sharing"
+                  value: "https://i.imgur.com/UFmKs8Y.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/takava_coffeebuffet"
@@ -1155,7 +1155,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Yellow+Place/@50.4378668,30.5335772,18.66z/data=!4m6!3m5!1s0x40d4cf074e905dc7:0x4ef5ac4028c2c49f!8m2!3d50.4379835!4d30.5341688!16s%2Fg%2F11c1sj9l57?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1E1AgLdsAjPxBAIFdpJvBKBtlF9QtCciS/view?usp=sharing"
+                  value: "https://i.imgur.com/74GXfZQ.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/yellowplacecoffee"
@@ -1224,7 +1224,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Dniprovska+Embankment,+14%D0%9A,+Kyiv,+02000/@50.4020033,30.6128655,18.65z/data=!4m6!3m5!1s0x40d4c5baee3de017:0x742e02a838313c7!8m2!3d50.4019681!4d30.6134189!16s%2Fg%2F11g021lg_2?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1ytvKpLLvevelkBvkHWIc__iSxmd6JxUi/view?usp=sharing"
+                  value: "https://i.imgur.com/Ui4dfXc.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/yellowplacecoffee"
@@ -1293,7 +1293,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Idealist+Coffee/@50.4512706,30.5092243,20.12z/data=!4m6!3m5!1s0x40d4cfb74a70bb49:0xb43ec396a0200cbc!8m2!3d50.4511856!4d30.5094908!16s%2Fg%2F11lh3w01cs?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1B1eHa09kqsMu5dDLn_ViEbOp634quBwS/view?usp=sharing"
+                  value: "https://i.imgur.com/thWLtCv.jpeg"
               - column:
                   name: web_site
                   value: "https://idealist1.choiceqr.com/section:kava"
@@ -1353,7 +1353,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Idealist+Coffee/@50.4337678,30.5128887,18.64z/data=!4m6!3m5!1s0x40d4cfb30e34e0e1:0xb760a075ddd72e4c!8m2!3d50.4336731!4d30.5132331!16s%2Fg%2F11j399yln6?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/16dai6u6dzb4Ny_eK8D747eokNNIxhBym/view?usp=sharing"
+                  value: "https://i.imgur.com/BvstOgl.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/idealistcoffee"
@@ -1401,7 +1401,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/IDEALIST+COFFEE+CO+(%D0%91%D0%A6+Astarta)/@50.4718488,30.5190803,18.25z/data=!4m6!3m5!1s0x40d4cf294f2a7a39:0x9b36d5f8cb3e44d3!8m2!3d50.4717015!4d30.5195907!16s%2Fg%2F11q86h8_pj?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1b_YmzK8StqjxUcc4Dl5KhdtwxpoxU0Os/view?usp=sharing"
+                  value: "https://i.imgur.com/1UPZiWF.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/idealistcoffee"
@@ -1461,7 +1461,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Boryspil+International+Airport/@50.3382681,30.8899754,889m/data=!3m1!1e3!4m6!3m5!1s0x40d4e8fa667ec5d1:0x690a2c5d49d870da!8m2!3d50.338222!4d30.8939274!16zL20vMDh0dHB5?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1WvtFc8YJzkGJi0nBVnKfNY5Vpe_WIFbE/view?usp=sharing"
+                  value: "https://i.imgur.com/dvV1Nj8.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/idealistcoffee"
@@ -1518,7 +1518,7 @@ databaseChangeLog:
                   value: "https://www.google.com/maps/place/Come+and+Stay/@50.4389889,30.5163498,306m/data=!3m1!1e3!4m6!3m5!1s0x40d4cefe966ddadb:0x422347d0264f7a7f!8m2!3d50.4390239!4d30.51767!16s%2Fg%2F11bw3dl4g4?entry=ttu"
               - column:
                   name: url_of_image
-                  value: "https://drive.google.com/file/d/1g6OgV3_HI_AoeZr_b_19Ud0ZmMF1cKfZ/view?usp=sharing"
+                  value: "https://i.imgur.com/xyMlTcr.jpeg"
               - column:
                   name: web_site
                   value: "https://www.instagram.com/comeandstaycoffee"
