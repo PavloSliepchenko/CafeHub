@@ -5,6 +5,8 @@ import com.example.cafehub.dto.cafe.CafeSearchParametersDto;
 import com.example.cafehub.dto.cafe.CreateCafeDto;
 import com.example.cafehub.model.User;
 import com.example.cafehub.service.CafeService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import java.math.BigDecimal;
 import java.util.List;
@@ -27,25 +29,32 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value = "/cafes")
+@Tag(name = "Cafes management", description = "Provides endpoints for CRUD operations with cafes")
 public class CafeController {
     private final CafeService cafeService;
 
     @GetMapping
+    @Operation(summary = "Get all cafes", description = "Returns all cafes from DB")
     public List<CafeResponseDto> getAllCafes(Pageable pageable) {
         return cafeService.getAllCafes(pageable);
     }
 
     @GetMapping(value = "/city")
+    @Operation(summary = "Get all cafes in the city",
+            description = "Returns all cafes in a chosen city")
     public List<CafeResponseDto> getAllCafesInCity(@RequestParam String city, Pageable pageable) {
         return cafeService.getAllCafesInCity(city, pageable);
     }
 
     @GetMapping(value = "/{cafeId}")
+    @Operation(summary = "Get cafe by id", description = "Returns a cafe by its id")
     public CafeResponseDto getCafeById(@PathVariable Long cafeId) {
         return cafeService.getCafeById(cafeId);
     }
 
     @GetMapping(value = "/search")
+    @Operation(summary = "Search for cafes by parameters",
+            description = "Returns all cafes that satisfy selected parameters")
     public List<CafeResponseDto> searchCafesByParameters(
             @Valid CafeSearchParametersDto parametersDto) {
         return cafeService.cafeSearch(parametersDto);
@@ -54,6 +63,8 @@ public class CafeController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Add cafe",
+            description = "Adds a new cafe to DB. Available to admin users only")
     public CafeResponseDto addCafe(@Valid @RequestBody CreateCafeDto createCafeDto) {
         return cafeService.addCafe(createCafeDto);
     }
@@ -61,6 +72,8 @@ public class CafeController {
     @PutMapping(value = "/{cafeId}")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Update cafe's info",
+            description = "Updates cafes info. Available to admin users only")
     public CafeResponseDto updateCafeInfo(
             @PathVariable Long cafeId,
             @Valid @RequestBody CreateCafeDto createCafeDto
@@ -70,6 +83,8 @@ public class CafeController {
 
     @PostMapping(value = "/scores")
     @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Set a score to cafe",
+            description = "Sets a score to cafe. Available to all authenticated in users")
     public CafeResponseDto setScore(Authentication authentication,
                                     @RequestParam Long cafeId,
                                     @RequestParam BigDecimal score) {
@@ -79,6 +94,9 @@ public class CafeController {
 
     @DeleteMapping(value = "/{cafeId}")
     @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Delete cafe",
+            description = "Deletes a chosen cafe. Available to admin users only. "
+                    + "Implements soft delete")
     public void deleteCafe(@PathVariable Long cafeId) {
         cafeService.deleteCafe(cafeId);
     }

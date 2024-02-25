@@ -3,6 +3,8 @@ package com.example.cafehub.controller;
 import com.example.cafehub.dto.language.LanguageCreateRequestDto;
 import com.example.cafehub.dto.language.LanguageResponseDto;
 import com.example.cafehub.service.LanguageService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -21,17 +23,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value = "/languages")
+@Tag(name = "Languages management",
+        description = "Provides endpoints for CRUD operations with languages")
 public class LanguageController {
     private final LanguageService languageService;
 
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @Operation(summary = "Get all languages", description = "Returns all languages")
     public List<LanguageResponseDto> getAllLanguages() {
         return languageService.getAllLanguages();
     }
 
     @GetMapping(value = "/{languageId}")
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @Operation(summary = "Get language by id", description = "Returns a language by its id")
     public LanguageResponseDto getLanguageById(@PathVariable Long languageId) {
         return languageService.getLanguageById(languageId);
     }
@@ -39,6 +43,8 @@ public class LanguageController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @Operation(summary = "Add a new language",
+            description = "Adds a new language to DB. Available to admin users only")
     public LanguageResponseDto addLanguage(
             @Valid @RequestBody LanguageCreateRequestDto createRequestDto) {
         return languageService.addLanguage(createRequestDto);
@@ -47,6 +53,8 @@ public class LanguageController {
     @PutMapping(value = "/{languageId}")
     @ResponseStatus(HttpStatus.CREATED)
     @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @Operation(summary = "Update language",
+            description = "Updates existing language. Available to admin users only")
     public LanguageResponseDto updateLanguage(
             @PathVariable Long languageId,
             @Valid @RequestBody LanguageCreateRequestDto createRequestDto
@@ -56,6 +64,9 @@ public class LanguageController {
 
     @DeleteMapping(value = "/{languageId}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @Operation(summary = "Delete language",
+            description = "Deletes a chosen language. Available to admin users only. "
+                    + "Implements soft delete")
     public void deleteLanguage(@PathVariable Long languageId) {
         languageService.deleteLanguageById(languageId);
     }
