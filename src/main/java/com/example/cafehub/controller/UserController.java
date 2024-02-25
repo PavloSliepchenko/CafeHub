@@ -8,6 +8,8 @@ import com.example.cafehub.dto.user.UserResponseDto;
 import com.example.cafehub.dto.user.UserWithRoleResponseDto;
 import com.example.cafehub.model.User;
 import com.example.cafehub.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -26,11 +28,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(value = "/users")
+@Tag(name = "Users management",
+        description = "Provides endpoints for CRUD operations with users")
 public class UserController {
     private final UserService userService;
 
     @PutMapping(value = "/role")
     @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Update user's role",
+            description = "Updates user's role. Available to admin users only")
     public UserWithRoleResponseDto updateRole(@RequestParam Long userId,
                                               @RequestParam String role) {
         return userService.updateRole(userId, role);
@@ -38,6 +44,9 @@ public class UserController {
 
     @GetMapping(value = "/favorites")
     @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Get favorite cafes",
+            description = "Returns all user's favorite cafes. "
+                    + "Available to all authenticated in users")
     public List<CafeResponseDto> getFavorites(Authentication authentication) {
         User user = (User) authentication.getPrincipal();
         return userService.getFavorites(user.getId());
@@ -45,6 +54,8 @@ public class UserController {
 
     @PatchMapping(value = "/update")
     @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Update user's profile", description = "Updates user's profile info. "
+            + "Available to all authenticated in users")
     public UserResponseDto updateProfile(Authentication authentication,
                                          @RequestBody UpdateAccountInfoDto requestDto) {
         User user = (User) authentication.getPrincipal();
@@ -53,6 +64,8 @@ public class UserController {
 
     @PutMapping(value = "/password")
     @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Update password", description = "Updates user's password. "
+            + "Available to all authenticated in users")
     public UserResponseDto updatePassword(Authentication authentication,
                                           @RequestBody UpdatePasswordRequestDto requestDto) {
         User user = (User) authentication.getPrincipal();
@@ -60,20 +73,27 @@ public class UserController {
     }
 
     @PatchMapping(value = "/reset")
+    @Operation(summary = "Reset password",
+            description = "Resets user's password and sends it to user's email")
     public void resetPassword(@RequestBody PasswordResetDto resetDto) {
         userService.resetPassword(resetDto);
     }
 
     @PostMapping(value = "/favorites/{cafeId}")
     @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Add cafe to favorites", description = "Adds cafe to user's favorites. "
+            + "Available to all authenticated in users")
     public List<CafeResponseDto> addCafeToFavorites(Authentication authentication,
-                                                           @PathVariable Long cafeId) {
+                                                    @PathVariable Long cafeId) {
         User user = (User) authentication.getPrincipal();
         return userService.addFavoriteCafe(user.getId(), cafeId);
     }
 
     @DeleteMapping(value = "/favorites/{cafeId}")
     @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Delete cafe from favorites",
+            description = "Removes cafe from user's favorites. "
+                    + "Available to all authenticated in users")
     public List<CafeResponseDto> deleteCafeFromFavorites(Authentication authentication,
                                                          @PathVariable Long cafeId) {
         User user = (User) authentication.getPrincipal();
@@ -82,6 +102,8 @@ public class UserController {
 
     @DeleteMapping(value = "/{userId}")
     @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Delete user", description = "Deletes a user. Implements soft delete. "
+            + "Available to admin users only")
     public void deleteUser(@PathVariable Long userId) {
         userService.deleteUserById(userId);
     }
