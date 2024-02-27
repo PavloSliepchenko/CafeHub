@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,6 +28,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class CommentController {
     private final CommentService commentService;
 
+    @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Get all comments",
+            description = "Returns all comments. Available to admin users only")
+    public List<CommentResponseDto> getAllCommentsInDb(Pageable pageable) {
+        return commentService.getAllComments(pageable);
+    }
+
     @PreAuthorize("hasAuthority('USER')")
     @PostMapping(value = "/{cafeId}")
     @Operation(summary = "Add a new comment",
@@ -38,7 +47,7 @@ public class CommentController {
         return commentService.addComment(user.getId(), cafeId, commentDto);
     }
 
-    @GetMapping(value = "/{userId}")
+    @GetMapping(value = "/user/{userId}")
     @PreAuthorize("hasAuthority('ADMIN')")
     @Operation(summary = "Get all comments by user id",
             description = "Returns all comment left by certain user. "
@@ -57,7 +66,7 @@ public class CommentController {
         return commentService.getAllCommentByUserId(user.getId());
     }
 
-    @GetMapping(value = "{commentId}")
+    @GetMapping(value = "/{commentId}")
     @PreAuthorize("hasAuthority('USER')")
     @Operation(summary = "Get comment by id",
             description = "Returns comment by id if this comment belongs to the user. "

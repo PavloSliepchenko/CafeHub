@@ -13,6 +13,7 @@ import com.example.cafehub.service.CommentService;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +22,13 @@ public class CommentServiceImpl implements CommentService {
     private final CommentRepository commentRepository;
     private final CafeRepository cafeRepository;
     private final CommentMapper commentMapper;
+
+    @Override
+    public List<CommentResponseDto> getAllComments(Pageable pageable) {
+        return commentRepository.findAll(pageable).stream()
+                .map(commentMapper::toDto)
+                .toList();
+    }
 
     @Override
     public List<CommentResponseDto> getAllCommentByUserId(Long userId) {
