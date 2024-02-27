@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,6 +33,14 @@ import org.springframework.web.bind.annotation.RestController;
         description = "Provides endpoints for CRUD operations with users")
 public class UserController {
     private final UserService userService;
+
+    @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @Operation(summary = "Get all users",
+            description = "Returns all registered users. Available to admin users only")
+    public List<UserResponseDto> getAllUsers(Pageable pageable) {
+        return userService.getAllUsers(pageable);
+    }
 
     @PutMapping(value = "/role")
     @PreAuthorize("hasAuthority('ADMIN')")

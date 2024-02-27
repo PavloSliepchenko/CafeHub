@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +38,13 @@ public class UserServiceImpl implements UserService {
     private final EmailService emailService;
     private final CafeMapper cafeMapper;
     private final UserMapper userMapper;
+
+    @Override
+    public List<UserResponseDto> getAllUsers(Pageable pageable) {
+        return userRepository.findAll(pageable).stream()
+                .map(userMapper::toDto)
+                .toList();
+    }
 
     @Override
     public UserResponseDto save(UserRegistrationRequestDto requestDto) {

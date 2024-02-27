@@ -8,8 +8,11 @@ import com.example.cafehub.dto.user.UserRegistrationRequestDto;
 import com.example.cafehub.dto.user.UserResponseDto;
 import com.example.cafehub.dto.user.UserWithRoleResponseDto;
 import java.util.List;
+import org.springframework.data.domain.Pageable;
 
 public interface UserService {
+    List<UserResponseDto> getAllUsers(Pageable pageable);
+
     UserResponseDto save(UserRegistrationRequestDto requestDto);
 
     UserWithRoleResponseDto updateRole(Long userId, String role);
