@@ -2,6 +2,7 @@ package com.example.cafehub.service.impl;
 
 import com.example.cafehub.dto.language.LanguageCreateRequestDto;
 import com.example.cafehub.dto.language.LanguageResponseDto;
+import com.example.cafehub.exception.EntityAlreadyExistsException;
 import com.example.cafehub.exception.EntityNotFoundException;
 import com.example.cafehub.mapper.LanguageMapper;
 import com.example.cafehub.model.Language;
@@ -32,7 +33,7 @@ public class LanguageServiceImpl implements LanguageService {
     @Override
     public LanguageResponseDto addLanguage(LanguageCreateRequestDto createRequestDto) {
         if (languageRepository.findByName(createRequestDto.getName()).isPresent()) {
-            throw new RuntimeException("This language was added before. "
+            throw new EntityAlreadyExistsException("This language was added before. "
                     + createRequestDto.getName());
         }
         return languageMapper.toDto(
@@ -44,7 +45,7 @@ public class LanguageServiceImpl implements LanguageService {
     public LanguageResponseDto updateLanguage(Long languageId,
                                               LanguageCreateRequestDto createRequestDto) {
         if (languageRepository.findByName(createRequestDto.getName()).isPresent()) {
-            throw new RuntimeException("This language was added before. "
+            throw new EntityAlreadyExistsException("This language was added before. "
                     + createRequestDto.getName());
         }
         Language language = getLanguageWithId(languageId);

@@ -7,6 +7,7 @@ import com.example.cafehub.dto.user.UpdatePasswordRequestDto;
 import com.example.cafehub.dto.user.UserRegistrationRequestDto;
 import com.example.cafehub.dto.user.UserResponseDto;
 import com.example.cafehub.dto.user.UserWithRoleResponseDto;
+import com.example.cafehub.exception.EntityAlreadyExistsException;
 import com.example.cafehub.exception.EntityNotFoundException;
 import com.example.cafehub.exception.RegistrationException;
 import com.example.cafehub.mapper.CafeMapper;
@@ -96,7 +97,7 @@ public class UserServiceImpl implements UserService {
                 .filter(e -> e.getId().equals(cafeId))
                 .findFirst();
         if (favoriteCafe.isPresent()) {
-            throw new RuntimeException(String.format(
+            throw new EntityAlreadyExistsException(String.format(
                     "Cafe with id %s was added to favorites before", cafeId));
         }
         Cafe cafe = cafeRepository.findById(cafeId)
@@ -116,7 +117,7 @@ public class UserServiceImpl implements UserService {
                 .filter(e -> e.getId().equals(cafeId))
                 .findFirst();
         if (favoriteCafe.isEmpty()) {
-            throw new RuntimeException(String.format(
+            throw new EntityNotFoundException(String.format(
                     "Cafe with id %s was removed from favorites before", cafeId));
         }
         favorite.remove(favoriteCafe.get());

@@ -1,5 +1,6 @@
 package com.example.cafehub.service.impl;
 
+import com.example.cafehub.exception.EmailException;
 import com.example.cafehub.service.EmailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -30,7 +31,7 @@ public class EmailServiceImpl implements EmailService {
             helper.setText(String.format(MESSAGE_TEMPLATE, newPassword));
             mailSender.send(message);
         } catch (MessagingException | UnsupportedEncodingException e) {
-            throw new RuntimeException(e);
+            throw new EmailException(e);
         }
     }
 }
