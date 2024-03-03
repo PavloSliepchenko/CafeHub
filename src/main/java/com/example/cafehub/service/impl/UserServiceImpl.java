@@ -4,6 +4,8 @@ import com.example.cafehub.dto.cafe.CafeResponseDto;
 import com.example.cafehub.dto.user.PasswordResetDto;
 import com.example.cafehub.dto.user.UpdateAccountInfoDto;
 import com.example.cafehub.dto.user.UpdatePasswordRequestDto;
+import com.example.cafehub.dto.user.UserLoginRequestDto;
+import com.example.cafehub.dto.user.UserLoginResponseDto;
 import com.example.cafehub.dto.user.UserRegistrationRequestDto;
 import com.example.cafehub.dto.user.UserResponseDto;
 import com.example.cafehub.dto.user.UserWithRoleResponseDto;
@@ -16,14 +18,18 @@ import com.example.cafehub.model.Cafe;
 import com.example.cafehub.model.User;
 import com.example.cafehub.repository.CafeRepository;
 import com.example.cafehub.repository.UserRepository;
+import com.example.cafehub.security.AuthenticationService;
 import com.example.cafehub.service.EmailService;
-import com.example.cafehub.service.PasswordGeneratorService;
 import com.example.cafehub.service.UserService;
+import com.example.cafehub.util.CodeGenerator;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +38,11 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
     private static final User.Role DEFAULT_ROLE = User.Role.USER;
     private static final Random random = new Random();
-    private final PasswordGeneratorService passwordGenerator;
+    private final AuthenticationService authenticationService;
+    @Qualifier("passwordGenerator")
+    private final CodeGenerator passwordGenerator;
+    @Qualifier("verificationCodeGenerator")
+    private final CodeGenerator verificationCodeGenerator;
     private final BCryptPasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final CafeRepository cafeRepository;
@@ -48,7 +58,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponseDto save(UserRegistrationRequestDto requestDto) {
+    public UserResponseDto save(UserRegistrationRequestDto requestDto,
+                                HttpServletRequest httpRequest) {
         if (findUserByEmail(requestDto.getEmail()).isPresent()) {
             throw new RegistrationException(String.format("The user with email %s already exists",
                     requestDto.getEmail()));
@@ -56,7 +67,37 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.toModel(requestDto);
         user.setRole(DEFAULT_ROLE);
         user.setPassword(passwordEncoder.encode(requestDto.getPassword()));
+        String verificationCode = getVerificationCode();
+        user.setVerificationCode(verificationCode);
+        emailService.sendVerificationEmail(
+                requestDto.getEmail(),
+                requestDto.getFirstName(),
+                verificationCode,
+                getSiteUrl(httpRequest)
+        );
         return userMapper.toDto(userRepository.save(user));
+    }
+
+    @Override
+    public UserLoginResponseDto login(UserLoginRequestDto request,
+                                      HttpServletRequest httpRequest) {
+        Optional<User> userOptional = userRepository.findByEmail(request.email());
+        if (userOptional.isPresent() && !userOptional.get().isVerified()) {
+            User user = userOptional.get();
+            String verificationCode = getVerificationCode();
+            user.setVerificationCode(verificationCode);
+            userRepository.save(user);
+            emailService.sendVerificationEmail(
+                    user.getEmail(),
+                    user.getFirstName(),
+                    user.getVerificationCode(),
+                    getSiteUrl(httpRequest)
+            );
+            throw new AccessDeniedException(
+                    "Account hasn't been activated yet. Please verify your email");
+
+        }
+        return authenticationService.authenticate(request);
     }
 
     @Override
@@ -132,11 +173,50 @@ public class UserServiceImpl implements UserService {
         if (userOptional.isEmpty()) {
             throw new EntityNotFoundException("There is no user with email " + resetDto.email());
         }
-        String newPassword = passwordGenerator.generateRandomPassword(random.nextInt(5, 10));
+        String newPassword = passwordGenerator.generateCode(random.nextInt(5, 10));
         User user = userOptional.get();
         user.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(user);
-        emailService.sendEmail(resetDto.email(), newPassword);
+        emailService.sendPasswordResetEmail(resetDto.email(), newPassword);
+    }
+
+    @Override
+    public String verifyEmail(String verificationCode) {
+        Optional<User> userOptional = userRepository.findByVerificationCode(verificationCode);
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            user.setVerified(true);
+            userRepository.save(user);
+            return String.format("""
+                    <!DOCTYPE html>
+                    <html lang="en">
+                        <head>
+                          <title>CafeHub</title>
+                        </head>
+                        <body style="font-family: Georgia; text-align: center">
+                            <h2>Email has been verified</h2>
+                            <p>
+                                %s, your account is active now.<br>
+                                Thank you for choosing CafeHub!
+                            </p>
+                        </body>
+                    </html>
+                    """, user.getFirstName());
+        }
+        return """
+                <!DOCTYPE html>
+                <html lang="en">
+                    <head>
+                      <title>CafeHub</title>
+                    </head>
+                    <body style="font-family: Georgia; text-align: center">
+                        <h2>Something went wrong</h2>
+                        <p>
+                            Please try again later
+                        </p>
+                    </body>
+                </html>
+                """;
     }
 
     @Override
@@ -152,5 +232,27 @@ public class UserServiceImpl implements UserService {
 
     private Optional<User> findUserByEmail(String email) {
         return userRepository.findByEmail(email);
+    }
+
+    private String getSiteUrl(HttpServletRequest request) {
+        String scheme = request.getScheme();
+        String serverName = request.getServerName();
+        int serverPort = request.getServerPort();
+
+        StringBuilder url = new StringBuilder();
+        url.append(scheme).append("://").append(serverName);
+
+        if (serverPort != 80 && serverPort != 443) {
+            url.append(":").append(serverPort);
+        }
+        return url.toString();
+    }
+
+    private String getVerificationCode() {
+        String verificationCode = null;
+        do {
+            verificationCode = verificationCodeGenerator.generateCode(random.nextInt(10, 25));
+        } while (userRepository.findByVerificationCode(verificationCode).isPresent());
+        return verificationCode;
     }
 }

@@ -1,5 +1,10 @@
 package com.example.cafehub.service;
 
 public interface EmailService {
-    void sendEmail(String toEmail, String newPassword);
+    void sendPasswordResetEmail(String toEmail, String newPassword);
+
+    void sendVerificationEmail(String toEmail,
+                               String name,
+                               String verificationCode,
+                               String siteUrl);
 }
