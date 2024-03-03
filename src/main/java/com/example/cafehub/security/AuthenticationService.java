@@ -2,6 +2,7 @@ package com.example.cafehub.security;
 
 import com.example.cafehub.dto.user.UserLoginRequestDto;
 import com.example.cafehub.dto.user.UserLoginResponseDto;
+import com.example.cafehub.model.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,6 +22,12 @@ public class AuthenticationService {
                         requestDto.password())
         );
         String token = jwtUtil.generateToken(authentication.getName());
-        return new UserLoginResponseDto(token);
+        User user = (User) authentication.getPrincipal();
+        return new UserLoginResponseDto(
+                user.getFirstName(),
+                user.getLastName(),
+                user.getEmail(),
+                token
+        );
     }
 }

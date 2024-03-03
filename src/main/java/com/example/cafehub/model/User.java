@@ -52,6 +52,10 @@ public class User implements UserDetails {
     )
     private List<Cafe> favorite;
     @Column(nullable = false)
+    private String verificationCode;
+    @Column(nullable = false)
+    private boolean isVerified = false;
+    @Column(nullable = false)
     private boolean isDeleted = false;
 
     public enum Role {

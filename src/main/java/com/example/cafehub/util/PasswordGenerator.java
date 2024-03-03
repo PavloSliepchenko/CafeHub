@@ -1,11 +1,10 @@
-package com.example.cafehub.service.impl;
+package com.example.cafehub.util;
 
-import com.example.cafehub.service.PasswordGeneratorService;
 import java.util.Random;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service
-public class PasswordGeneratorServiceImpl implements PasswordGeneratorService {
+@Component("passwordGenerator")
+public class PasswordGenerator implements CodeGenerator {
     private static final String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
     private static final String CHAR_UPPER = CHAR_LOWER.toUpperCase();
     private static final String NUMBER = "0123456789";
@@ -14,7 +13,7 @@ public class PasswordGeneratorServiceImpl implements PasswordGeneratorService {
     private static final Random random = new Random();
 
     @Override
-    public String generateRandomPassword(int length) {
+    public String generateCode(int length) {
         StringBuilder password = new StringBuilder(length);
         password.append(CHAR_LOWER.charAt(random.nextInt(CHAR_LOWER.length())));
         password.append(CHAR_UPPER.charAt(random.nextInt(CHAR_UPPER.length())));

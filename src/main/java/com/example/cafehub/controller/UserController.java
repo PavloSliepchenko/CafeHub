@@ -109,6 +109,13 @@ public class UserController {
         return userService.removeFavoriteCafe(user.getId(), cafeId);
     }
 
+    @GetMapping(value = "/verify")
+    @Operation(summary = "Verify email",
+            description = "Verifies user's email with verification code")
+    public String verify(@RequestParam String verificationCode) {
+        return userService.verifyEmail(verificationCode);
+    }
+
     @DeleteMapping(value = "/{userId}")
     @PreAuthorize("hasAuthority('ADMIN')")
     @Operation(summary = "Delete user", description = "Deletes a user. Implements soft delete. "

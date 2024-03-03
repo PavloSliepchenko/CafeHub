@@ -21,3 +21,9 @@ databaseChangeLog:
               - column:
                   name: role
                   value: "ADMIN"
+              - column:
+                  name: verification_code
+                  value: "admin"
+              - column:
+                  name: is_verified
+                  value: 1

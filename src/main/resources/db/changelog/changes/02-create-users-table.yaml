@@ -33,6 +33,17 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: verification_code
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_verified
+                  type: boolean
+                  constraints:
+                    nullable: false
+                    defaultValue: false
+              - column:
                   name: is_deleted
                   type: boolean
                   defaultValueBoolean: false
