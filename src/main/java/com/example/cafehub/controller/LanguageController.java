@@ -64,6 +64,7 @@ public class LanguageController {
 
     @DeleteMapping(value = "/{languageId}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(summary = "Delete language",
             description = "Deletes a chosen language. Available to admin users only. "
                     + "Implements soft delete")
