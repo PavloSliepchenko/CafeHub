@@ -94,6 +94,7 @@ public class CafeController {
 
     @DeleteMapping(value = "/{cafeId}")
     @PreAuthorize("hasAuthority('ADMIN')")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(summary = "Delete cafe",
             description = "Deletes a chosen cafe. Available to admin users only. "
                     + "Implements soft delete")
