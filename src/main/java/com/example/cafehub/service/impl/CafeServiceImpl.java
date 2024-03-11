@@ -3,6 +3,7 @@ package com.example.cafehub.service.impl;
 import com.example.cafehub.dto.cafe.CafeResponseDto;
 import com.example.cafehub.dto.cafe.CafeSearchParametersDto;
 import com.example.cafehub.dto.cafe.CreateCafeDto;
+import com.example.cafehub.exception.EntityAlreadyExistsException;
 import com.example.cafehub.exception.EntityNotFoundException;
 import com.example.cafehub.mapper.CafeMapper;
 import com.example.cafehub.model.Cafe;
@@ -49,8 +50,17 @@ public class CafeServiceImpl implements CafeService {
 
     @Override
     public CafeResponseDto addCafe(CreateCafeDto createCafeDto) {
+        if (cafeRepository.findByNameAndAddressAndCity(
+                        createCafeDto.getName(),
+                        createCafeDto.getAddress(),
+                        createCafeDto.getCity())
+                .isPresent()) {
+            throw new EntityAlreadyExistsException("This cafe was added before");
+        }
         Cafe cafe = cafeMapper.toModel(createCafeDto);
         cafe.setScore(BigDecimal.ZERO);
+        cafe.setTotalScore(BigDecimal.ZERO);
+        cafe.setNumberOfUsersVoted(BigDecimal.ZERO);
         return cafeMapper.toDto(cafeRepository.save(cafe));
     }
 
