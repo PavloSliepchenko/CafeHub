@@ -10,6 +10,7 @@ import com.example.cafehub.model.User;
 import com.example.cafehub.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -68,9 +69,10 @@ public class UserController {
     @Operation(summary = "Update user's profile", description = "Updates user's profile info. "
             + "Available to all authenticated in users")
     public UserResponseDto updateProfile(Authentication authentication,
-                                         @RequestBody UpdateAccountInfoDto requestDto) {
+                                         @RequestBody UpdateAccountInfoDto requestDto,
+                                         HttpServletRequest httpRequest) {
         User user = (User) authentication.getPrincipal();
-        return userService.updateAccountInfo(user.getId(), requestDto);
+        return userService.updateAccountInfo(user.getId(), requestDto, httpRequest);
     }
 
     @PutMapping(value = "/password")

@@ -103,7 +103,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserWithRoleResponseDto updateRole(Long userId, String role) {
         User user = getUserById(userId);
-        user.setRole(User.Role.valueOf(role));
+        user.setRole(User.Role.valueOf(role.toUpperCase()));
         return userMapper.toDtoWithRole(userRepository.save(user));
     }
 
@@ -115,9 +115,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponseDto updateAccountInfo(Long userId, UpdateAccountInfoDto requestDto) {
+    public UserResponseDto updateAccountInfo(
+            Long userId, UpdateAccountInfoDto requestDto, HttpServletRequest httpRequest) {
         User user = getUserById(userId);
-        user.setEmail(requestDto.getEmail());
+        boolean isSameEmail = user.getEmail().equalsIgnoreCase(requestDto.getEmail());
+        if (!isSameEmail && findUserByEmail(requestDto.getEmail()).isPresent()) {
+            throw new EntityAlreadyExistsException("This email already used by somebody else");
+        }
+        if (!isSameEmail) {
+            user.setVerified(false);
+            user.setEmail(requestDto.getEmail());
+            String verificationCode = getVerificationCode();
+            user.setVerificationCode(verificationCode);
+            emailService.sendVerificationEmail(
+                    requestDto.getEmail(),
+                    requestDto.getFirstName(),
+                    verificationCode,
+                    getSiteUrl(httpRequest)
+            );
+        }
         user.setLastName(requestDto.getLastName());
         user.setFirstName(requestDto.getFirstName());
         return userMapper.toDto(userRepository.save(user));
