@@ -24,7 +24,8 @@ public interface UserService {
 
     List<CafeResponseDto> getFavorites(Long userId);
 
-    UserResponseDto updateAccountInfo(Long userId, UpdateAccountInfoDto requestDto);
+    UserResponseDto updateAccountInfo(
+            Long userId, UpdateAccountInfoDto requestDto, HttpServletRequest httpRequest);
 
     UserResponseDto updatePassword(Long userId, UpdatePasswordRequestDto requestDto);
 

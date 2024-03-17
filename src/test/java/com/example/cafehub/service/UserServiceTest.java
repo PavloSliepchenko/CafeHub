@@ -334,10 +334,10 @@ class UserServiceTest {
     }
 
     @Test
-    @DisplayName("Update account info")
-    void updateAccountInfo_ValidRequest_ShouldReturnDto() {
+    @DisplayName("Update account info. Same email address")
+    void updateAccountInfo_RequestWithSameEmailAddress_ShouldReturnDto() {
         UpdateAccountInfoDto requestDto = new UpdateAccountInfoDto();
-        requestDto.setEmail("newEmail@gmail.com");
+        requestDto.setEmail(user1.getEmail());
         requestDto.setFirstName("NewFirstName");
         requestDto.setLastName("NewLastName");
 
@@ -358,11 +358,73 @@ class UserServiceTest {
         Mockito.when(userRepository.save(testUser)).thenReturn(testUser);
         Mockito.when(userRepository.findById(user1.getId())).thenReturn(Optional.of(user1));
 
-        UserResponseDto actual = userService.updateAccountInfo(user1.getId(), requestDto);
+        UserResponseDto actual =
+                userService.updateAccountInfo(
+                        user1.getId(), requestDto, Mockito.mock(HttpServletRequest.class));
 
         Assertions.assertEquals(expected.getId(), actual.getId());
         Assertions.assertEquals(expected.getLastName(), actual.getLastName());
         Assertions.assertEquals(expected.getFirstName(), actual.getFirstName());
+
+    }
+
+    @Test
+    @DisplayName("Update account info. New email address")
+    void updateAccountInfo_RequestWithNewEmailAddress_ShouldReturnDto() {
+        user1.setVerified(true);
+        UpdateAccountInfoDto requestDto = new UpdateAccountInfoDto();
+        requestDto.setEmail("newEmail@gmail.com");
+        requestDto.setFirstName("NewFirstName");
+        requestDto.setLastName("NewLastName");
+
+        User testUser = new User();
+        testUser.setVerified(false);
+        testUser.setId(user1.getId());
+        testUser.setRole(user1.getRole());
+        testUser.setEmail(requestDto.getEmail());
+        testUser.setLastName(requestDto.getLastName());
+        testUser.setFirstName(requestDto.getFirstName());
+
+        UserResponseDto expected = new UserResponseDto();
+        expected.setId(testUser.getId());
+        expected.setEmail(testUser.getEmail());
+        expected.setVerified(testUser.isVerified());
+        expected.setLastName(testUser.getLastName());
+        expected.setFirstName(testUser.getFirstName());
+
+        Mockito.when(userMapper.toDto(testUser)).thenReturn(expected);
+        Mockito.when(userRepository.save(testUser)).thenReturn(testUser);
+        Mockito.when(userRepository.findById(user1.getId())).thenReturn(Optional.of(user1));
+        Mockito.when(userRepository.findByEmail(requestDto.getEmail()))
+                .thenReturn(Optional.empty());
+        Mockito.doNothing().when(emailService).sendVerificationEmail(
+                Mockito.anyString(), Mockito.anyString(), Mockito.any(), Mockito.anyString());
+        Mockito.when(userRepository.findByVerificationCode(null))
+                .thenReturn(Optional.empty());
+
+        UserResponseDto actual =
+                userService.updateAccountInfo(
+                        user1.getId(), requestDto, Mockito.mock(HttpServletRequest.class));
+
+        Assertions.assertEquals(expected.getId(), actual.getId());
+        Assertions.assertEquals(expected.isVerified(), actual.isVerified());
+        Assertions.assertEquals(expected.getLastName(), actual.getLastName());
+        Assertions.assertEquals(expected.getFirstName(), actual.getFirstName());
+    }
+
+    @Test
+    @DisplayName("Update account info. New email address used by someone else. Throws exception")
+    void updateAccountInfo_UsesEmailUsedBySomeoneElse_ShouldThrowException() {
+        UpdateAccountInfoDto requestDto = new UpdateAccountInfoDto();
+        requestDto.setEmail("newEmail@gmail.com");
+
+        Mockito.when(userRepository.findById(user1.getId())).thenReturn(Optional.of(user1));
+        Mockito.when(userRepository.findByEmail(requestDto.getEmail()))
+                .thenReturn(Optional.of(user3));
+
+        Assertions.assertThrows(EntityAlreadyExistsException.class,
+                () -> userService.updateAccountInfo(
+                        user1.getId(), requestDto, Mockito.mock(HttpServletRequest.class)));
     }
 
     @Test

@@ -21,9 +21,9 @@ public class CafeSpecifications {
 
     public Specification<Cafe> hasLanguages(String[] languages) {
         return (root, query, criteriaBuilder) -> {
-            Join<Cafe, Language> languagesJoin = root.join("languages");
             List<Predicate> predicates = new ArrayList<>();
             for (String language : languages) {
+                Join<Cafe, Language> languagesJoin = root.join("languages");
                 predicates.add(criteriaBuilder.equal(languagesJoin.get("name"), language));
             }
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
@@ -52,9 +52,9 @@ public class CafeSpecifications {
 
     public Specification<Cafe> hasCuisines(String[] cuisineNames) {
         return (root, query, criteriaBuilder) -> {
-            Join<Cafe, Cuisine> cuisinesJoin = root.join("cuisines");
             List<Predicate> predicates = new ArrayList<>();
             for (String cuisine : cuisineNames) {
+                Join<Cafe, Cuisine> cuisinesJoin = root.join("cuisines");
                 predicates.add(criteriaBuilder.equal(cuisinesJoin.get("name"), cuisine));
             }
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
