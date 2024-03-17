@@ -75,19 +75,19 @@ class CafeServiceTest {
         cafe3.setScore(BigDecimal.valueOf(5));
 
         responseDto1 = new CafeResponseDto();
-        responseDto1.setId(1L);
+        responseDto1.setId(cafe1.getId());
         responseDto1.setName(cafe1.getName());
         responseDto1.setAddress(cafe1.getAddress());
         responseDto1.setScore(cafe1.getScore());
 
         responseDto2 = new CafeResponseDto();
-        responseDto2.setId(2L);
+        responseDto2.setId(cafe2.getId());
         responseDto2.setName(cafe2.getName());
         responseDto2.setAddress(cafe2.getAddress());
         responseDto2.setScore(cafe2.getScore());
 
         responseDto3 = new CafeResponseDto();
-        responseDto3.setId(3L);
+        responseDto3.setId(cafe3.getId());
         responseDto3.setName(cafe3.getName());
         responseDto3.setAddress(cafe3.getAddress());
         responseDto3.setScore(cafe3.getScore());
