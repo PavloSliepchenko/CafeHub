@@ -323,10 +323,16 @@ class CommentServiceTest {
         commentRequestDto.setComment("New comment");
         commentResponseDto1.setComment(commentRequestDto.getComment());
 
+        Comment testComment = new Comment();
+        testComment.setId(comment1.getId());
+        testComment.setUser(comment1.getUser());
+        testComment.setCafe(comment1.getCafe());
+        testComment.setComment(commentRequestDto.getComment());
+
         Mockito.when(commentRepository.findByIdAndUserId(
                 comment1.getId(), comment1.getUser().getId())).thenReturn(Optional.of(comment1));
-        Mockito.when(commentRepository.save(Mockito.any(Comment.class))).thenReturn(comment1);
-        Mockito.when(commentMapper.toDto(comment1)).thenReturn(commentResponseDto1);
+        Mockito.when(commentRepository.save(testComment)).thenReturn(testComment);
+        Mockito.when(commentMapper.toDto(testComment)).thenReturn(commentResponseDto1);
 
         CommentResponseDto actual = commentService.update(
                 comment1.getUser().getId(), comment1.getId(), commentRequestDto);
