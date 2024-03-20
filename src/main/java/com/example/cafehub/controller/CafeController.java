@@ -8,6 +8,8 @@ import com.example.cafehub.service.CafeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import java.math.BigDecimal;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +34,12 @@ import org.springframework.web.bind.annotation.RestController;
 @Tag(name = "Cafes management", description = "Provides endpoints for CRUD operations with cafes")
 public class CafeController {
     private final CafeService cafeService;
+
+    @GetMapping(value = "/name")
+    @Operation(summary = "Get cafes by name", description = "Returns cafes with the similar name")
+    public List<CafeResponseDto> getCafeByName(@RequestParam String name) {
+        return cafeService.getByName(name);
+    }
 
     @GetMapping
     @Operation(summary = "Get all cafes", description = "Returns all cafes from DB")
@@ -87,6 +95,8 @@ public class CafeController {
             description = "Sets a score to cafe. Available to all authenticated in users")
     public CafeResponseDto setScore(Authentication authentication,
                                     @RequestParam Long cafeId,
+                                    @Min(1)
+                                    @Max(5)
                                     @RequestParam BigDecimal score) {
         User user = (User) authentication.getPrincipal();
         return cafeService.setScore(user.getId(), cafeId, score);

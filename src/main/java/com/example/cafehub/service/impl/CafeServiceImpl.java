@@ -30,6 +30,13 @@ public class CafeServiceImpl implements CafeService {
     private final CafeMapper cafeMapper;
 
     @Override
+    public List<CafeResponseDto> getByName(String name) {
+        return cafeRepository.findByName(name.trim()).stream()
+                .map(cafeMapper::toDto)
+                .toList();
+    }
+
+    @Override
     public List<CafeResponseDto> getAllCafes(Pageable pageable) {
         return cafeRepository.findAll(pageable).stream()
                 .map(cafeMapper::toDto)
