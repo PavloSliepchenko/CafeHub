@@ -15,6 +15,6 @@ public interface CafeRepository extends JpaRepository<Cafe, Long>, JpaSpecificat
 
     @Query(value = "SELECT c "
             + "FROM Cafe c "
-            + "WHERE c.name LIKE %:name%")
-    List<Cafe> findByName(String name);
+            + "WHERE c.name LIKE %:name% AND c.city = :city")
+    List<Cafe> findByName(String name, String city);
 }

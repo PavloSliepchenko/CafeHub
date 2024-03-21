@@ -30,8 +30,8 @@ public class CafeServiceImpl implements CafeService {
     private final CafeMapper cafeMapper;
 
     @Override
-    public List<CafeResponseDto> getByName(String name) {
-        return cafeRepository.findByName(name.trim()).stream()
+    public List<CafeResponseDto> getByName(String name, String city) {
+        return cafeRepository.findByName(name.trim(), city).stream()
                 .map(cafeMapper::toDto)
                 .toList();
     }
