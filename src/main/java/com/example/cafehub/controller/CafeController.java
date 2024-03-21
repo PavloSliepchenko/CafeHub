@@ -37,8 +37,9 @@ public class CafeController {
 
     @GetMapping(value = "/name")
     @Operation(summary = "Get cafes by name", description = "Returns cafes with the similar name")
-    public List<CafeResponseDto> getCafeByName(@RequestParam String name) {
-        return cafeService.getByName(name);
+    public List<CafeResponseDto> getCafeByName(@RequestParam String name,
+                                               @RequestParam String city) {
+        return cafeService.getByName(name, city);
     }
 
     @GetMapping
