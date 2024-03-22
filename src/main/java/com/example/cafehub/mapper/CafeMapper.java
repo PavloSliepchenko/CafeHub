@@ -13,5 +13,6 @@ public interface CafeMapper {
     CafeResponseDto toDto(Cafe cafe);
 
     @Mapping(target = "cuisines", source = "cuisineNames", qualifiedByName = "getByName")
+    @Mapping(target = "languages", source = "languageNames", qualifiedByName = "getByLanguageName")
     Cafe toModel(CreateCafeDto createCafeDto);
 }
