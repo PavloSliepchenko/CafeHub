@@ -31,6 +31,7 @@ public class CreateCafeDto {
     private BigDecimal averageBill;
     private List<String> images;
     private List<String> cuisineNames;
+    private List<String> languageNames;
     private boolean fastService;
     private boolean wifi;
     private boolean businessLunch;
