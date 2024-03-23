@@ -33,3 +33,7 @@ databaseChangeLog:
       file: db/changelog/changes/16-create-scores-table.yaml
   - include:
       file: db/changelog/changes/17-create-users_cafes-table.yaml
+  - include:
+      file: db/changelog/changes/18-add-phone-number-column.yaml
+  - include:
+      file: db/changelog/changes/19-add-phone-numbers-to-cafes.yaml

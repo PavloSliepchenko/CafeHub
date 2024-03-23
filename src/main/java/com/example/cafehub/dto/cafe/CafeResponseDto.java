@@ -13,6 +13,7 @@ public class CafeResponseDto {
     private Long id;
     private String name;
     private String address;
+    private String phoneNumber;
     private List<LanguageResponseDto> languages;
     private LocalTime openFromWeekdays;
     private LocalTime closeAtWeekdays;
