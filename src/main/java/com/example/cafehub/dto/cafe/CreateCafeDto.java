@@ -18,6 +18,7 @@ public class CreateCafeDto {
     @NotNull
     @NotEmpty
     private String address;
+    private String phoneNumber;
     private LocalTime openFromWeekdays;
     private LocalTime closeAtWeekdays;
     private LocalTime openFromWeekends;

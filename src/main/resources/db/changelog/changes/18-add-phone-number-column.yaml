@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-phone-number-column
+      author: PavloSliepchenko
+      changes:
+        - addColumn:
+            tableName: cafes
+            columns:
+              - column:
+                  name: phone_number
+                  type: varchar(20)

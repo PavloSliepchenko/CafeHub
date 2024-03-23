@@ -1,0 +1,80 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-phone-numbers-to-cafes
+      author: PavloSliepchenko
+      changes:
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(099) 402 9052' WHERE id = 1
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(068) 270 7575' WHERE id = 2
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(067) 490 2828' WHERE id = 3
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(050) 315 6869' WHERE id = 4
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(067) 507 7163' WHERE id = 5
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(067) 105 7227' WHERE id = 6
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(044) 364 9896' WHERE id = 7
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(044) 585 0758' WHERE id = 8
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(044) 290 4290' WHERE id = 9
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(095) 041 4176' WHERE id = 10
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(066) 400 1104' WHERE id = 11
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(095) 464 9759' WHERE id = 12
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(044) 235 8546' WHERE id = 13
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(044) 482 3361' WHERE id = 14
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(044) 425 3171' WHERE id = 15
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(073) 138 6315' WHERE id = 16
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(044) 466 6181' WHERE id = 17
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(073) 138 6316' WHERE id = 18
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(095) 276 1142' WHERE id = 19
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(095) 276 1142' WHERE id = 20
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(067) 620 5374' WHERE id = 21
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(068) 648 7478' WHERE id = 22
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(067) 000 2418' WHERE id = 23
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(067) 000 2417' WHERE id = 24
+        - sql:
+            dbms: 'mysql'
+            sql: UPDATE cafes SET phone_number = '(063) 683 3241' WHERE id = 25

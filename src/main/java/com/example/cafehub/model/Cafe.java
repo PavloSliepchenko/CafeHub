@@ -37,6 +37,7 @@ public class Cafe {
     private String city;
     @Column(nullable = false)
     private String address;
+    private String phoneNumber;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "cafes_languages",
