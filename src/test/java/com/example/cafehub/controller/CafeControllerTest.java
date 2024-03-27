@@ -34,7 +34,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CafeControllerTest {
     protected static MockMvc mockMvc;
     @Autowired
@@ -51,7 +50,6 @@ class CafeControllerTest {
     }
 
     @Test()
-    @Order(1)
     @DisplayName("Get cafe by name")
     void getCafeByName_ValidRequest_ShouldReturnListOfCafeDtos() throws Exception {
         String name = "  blur  ";
@@ -86,7 +84,6 @@ class CafeControllerTest {
     }
 
     @Test
-    @Order(2)
     @DisplayName("Get all cafes")
     void getAllCafes_ValidRequest_ShouldReturnListOfCafeDtos() throws Exception {
         MvcResult result = mockMvc.perform(get("/cafes?page=0&size=30"))
@@ -99,12 +96,11 @@ class CafeControllerTest {
         for (CafeResponseDto cafe : actual) {
             Assertions.assertNotNull(cafe);
             assertThat(cafe.getId()).isIn(1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L,
-                    14L, 15L, 16L, 17L, 18L, 19L, 20L, 21L, 22L, 23L, 24L, 25L);
+                    14L, 15L, 16L, 17L, 18L, 19L, 20L, 21L, 22L, 27L, 23L, 24L, 25L);
         }
     }
 
     @Test
-    @Order(3)
     @DisplayName("Get all cafes in the city")
     void getAllCafesInCity_ValidRequest_ShouldReturnListOfCafeDtos() throws Exception {
         String city = "Kyiv";
@@ -119,7 +115,7 @@ class CafeControllerTest {
         for (CafeResponseDto cafe : actual) {
             Assertions.assertNotNull(cafe);
             assertThat(cafe.getId()).isIn(1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L,
-                    14L, 15L, 16L, 17L, 18L, 19L, 20L, 21L, 22L, 23L, 24L, 25L);
+                    14L, 15L, 16L, 17L, 18L, 19L, 20L, 21L, 22L, 27L, 23L, 24L, 25L);
         }
 
         city = "Lviv";
@@ -132,7 +128,6 @@ class CafeControllerTest {
     }
 
     @Test
-    @Order(4)
     @DisplayName("Find cafe by id")
     void getCafeById_ValidRequest_ShouldReturnCorrectCafeDto() throws Exception {
         Long cafeId = 1L;
@@ -155,7 +150,6 @@ class CafeControllerTest {
     }
 
     @Test
-    @Order(5)
     @DisplayName("Search cafes by parameters")
     void searchCafesByParameters_ValidRequest_ShouldReturnListOfCafeDtos() throws Exception {
         String cuisines = "European, Ukrainian, Fast food";
@@ -229,7 +223,6 @@ class CafeControllerTest {
     }
 
     @Test
-    @Order(6)
     @DisplayName("Update cafe's info")
     @WithMockUser(username = "Admin", authorities = "ADMIN")
     void updateCafeInfo_ValidRequest_ShouldUpdateCafe() throws Exception {
@@ -266,7 +259,6 @@ class CafeControllerTest {
     }
 
     @Test
-    @Order(7)
     @DisplayName("Set score")
     @WithUserDetails("second@user.com")
     @Sql(scripts = "classpath:database/users/add-four-users-to-db.sql",
@@ -284,7 +276,6 @@ class CafeControllerTest {
     }
 
     @Test
-    @Order(8)
     @DisplayName("Add a new cafe to DB")
     @WithMockUser(username = "Admin", authorities = "ADMIN")
     void addCafe_ValidRequest_ShouldAddCafe() throws Exception {
@@ -308,15 +299,17 @@ class CafeControllerTest {
     }
 
     @Test
-    @Order(9)
     @DisplayName("Delete cafe")
     @WithMockUser(username = "Admin", authorities = "ADMIN")
     void deleteCafe_ValidRequest_ShouldDeleteCafe() throws Exception {
         Long cafeId = 22L;
+        Cafe cafe = cafeRepository.findById(cafeId).get();
         mockMvc.perform(delete(String.format("/cafes/%s", cafeId)))
                 .andExpect(status().isNoContent());
 
         List<Cafe> cafesLeft = cafeRepository.findAll();
         Assertions.assertEquals(24, cafesLeft.size());
+
+        cafeRepository.save(cafe);
     }
 }
