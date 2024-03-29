@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 @RequiredArgsConstructor
@@ -117,8 +118,8 @@ public class UserController {
     @GetMapping(value = "/verify")
     @Operation(summary = "Verify email",
             description = "Verifies user's email with verification code")
-    public String verify(@RequestParam String verificationCode) {
-        return userService.verifyEmail(verificationCode);
+    public RedirectView verify(@RequestParam String verificationCode) {
+        return new RedirectView(userService.verifyEmail(verificationCode));
     }
 
     @DeleteMapping(value = "/{userId}")

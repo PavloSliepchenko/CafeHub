@@ -19,6 +19,7 @@ import com.example.cafehub.model.User;
 import com.example.cafehub.repository.CafeRepository;
 import com.example.cafehub.repository.UserRepository;
 import com.example.cafehub.security.AuthenticationService;
+import com.example.cafehub.security.JwtUtil;
 import com.example.cafehub.service.EmailService;
 import com.example.cafehub.service.UserService;
 import com.example.cafehub.util.CodeGenerator;
@@ -49,6 +50,7 @@ public class UserServiceImpl implements UserService {
     private final EmailService emailService;
     private final CafeMapper cafeMapper;
     private final UserMapper userMapper;
+    private final JwtUtil jwtUtil;
 
     @Override
     public List<UserResponseDto> getAllUsers(Pageable pageable) {
@@ -198,41 +200,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String verifyEmail(String verificationCode) {
+        String homePageUrl = "https://vitalii-fedusov.github.io/CafeHub";
         Optional<User> userOptional = userRepository.findByVerificationCode(verificationCode);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
             user.setVerified(true);
+            user.setVerificationCode("Verified");
             userRepository.save(user);
-            return String.format("""
-                    <!DOCTYPE html>
-                    <html lang="en">
-                        <head>
-                          <title>CafeHub</title>
-                        </head>
-                        <body style="font-family: Georgia; text-align: center">
-                            <h2>Email has been verified</h2>
-                            <p>
-                                %s, your account is active now.<br>
-                                Thank you for choosing CafeHub!
-                            </p>
-                        </body>
-                    </html>
-                    """, user.getFirstName());
+            String token = jwtUtil.generateToken(user.getEmail());
+            return homePageUrl + "?accessToken=" + token;
         }
-        return """
-                <!DOCTYPE html>
-                <html lang="en">
-                    <head>
-                      <title>CafeHub</title>
-                    </head>
-                    <body style="font-family: Georgia; text-align: center">
-                        <h2>Something went wrong</h2>
-                        <p>
-                            Please try again later
-                        </p>
-                    </body>
-                </html>
-                """;
+        return homePageUrl;
     }
 
     @Override
