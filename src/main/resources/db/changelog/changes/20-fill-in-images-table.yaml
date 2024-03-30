@@ -1,0 +1,1805 @@
+databaseChangeLog:
+  - changeSet:
+      id: fill-in-images-table
+      author: PavloSliepchenko
+      changes:
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/u2RCPHL.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/GotgCKm.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/hb1T2ff.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/BimAFTy.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/fAbHqTA.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/MEoR23j.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/2b3IkKg.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 1
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Z7uSwcZ.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/8uCt2Tq.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/CMaxBCP.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/l8Y0bpP.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/AxAhFiq.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/2P2CcNE.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/dG0HK5F.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/PzZZwLw.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 2
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/0Rtksvf.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/GN0e3Ub.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/ksLA7z4.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/u1NxW7f.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/CV02B8b.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/OtbIfvl.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/zs3SNR2.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/9G5ms4P.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 3
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/rVW8P5a.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/bvCQdhE.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Et9ohHg.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/7zpAuF9.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/EA8716s.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/AmYQnKu.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/72UFeIm.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/2GolhQw.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 4
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/sShFvo3.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/iDDyqLa.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/E2oCdR4.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/YuTId1b.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/D4TGTCx.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/heUKBrP.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/DAEL3c0.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/gklJosk.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 5
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Le0ZBPq.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/wttLED1.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/2AxBKX9.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/xKoUemI.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/PeRGkUe.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/7aIM8Gg.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Nd2wfJi.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Bb4yV3a.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 6
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/mzGk16e.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/bwUInRu.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/budHDJV.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/VmqSxNO.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/HppvGoe.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/gRtFRHW.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/isLZCPU.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/s5paffc.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 7
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/5gDY6DP.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/HW26UCD.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/p9tOtou.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/xIcJLw0.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/ZP68X11.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/WhxVymP.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/vemkQ9S.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/YWO36dg.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 8
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/jcSfJAs.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/eLrMENw.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/UT0eHX1.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/TxIvH6B.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Dr4bYQJ.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/iZyaC2E.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/CpdfcQh.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/ve9c5PD.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 9
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/ACUaWTu.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/EG7OOJ8.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/9pk2LgN.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/yMVf0Ch.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/bz354mR.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/BooXjWD.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/QNZPWgU.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/morvgN2.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 10
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/XCn4lU0.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/oswCI9E.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/NpIO8U7.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/JOeznUp.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/8VOlDb0.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/IXeBy8V.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/ixFzql4.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/j1kjC8A.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 11
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/bSspZB9.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/RC3AarC.jpeg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/8S8twlw.jpeg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/lNgHvvq.jpeg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/oO1p1OJ.jpeg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/cifi2YM.jpeg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/dxujRiZ.jpeg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/ia4udnL.jpeg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 12
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/oiu8wTi.jpeg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/3mISYhc.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/7Wo5h90.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/pXmoJon.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/JteRzyo.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/0GztIOl.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Yi44ePg.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/aR7oXN5.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 13
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Fndnt9s.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/cnSHkmC.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/V4GBEkR.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/aod6jnP.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/35x8L6c.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/xQzaFEZ.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/nZOd9mB.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/t0cM544.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 14
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Vo0D2HH.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/N2R6bY4.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/RgYcnpC.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/dEQnisc.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/9eXQoEy.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/YV138x5.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/PUazZub.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/O0bIVAj.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 15
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/pqhUSBz.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/am6x9Lx.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/fDtvM6q.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/JBgQ0wU.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/TZYtBly.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/KKw8BLx.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/3EgiNFf.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/NcRIjiO.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 16
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/XKhxkd7.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/gU3g7cB.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/mP0ll1t.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/ktAduLV.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/a1XJoK2.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/E2oFAdL.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/pPrCQIw.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/K0rRoAA.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 17
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Fbm7w2v.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/cDf22Ul.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/8ZTMMj5.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Zi5CsSF.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/eT7xam9.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Xna6ANX.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/X79ffz4.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/ZogV2bs.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 18
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/k8JZ5IU.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/QvgSLub.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/fbPprTv.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/hQOhymV.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/TFuAYL1.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/P8SRElg.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/cSKp8pt.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/DCmvOzJ.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 19
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/6enlWL4.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/P9NqDs4.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/fsnBDuV.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/PyYfVvN.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/hcnyZYG.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/z3IbGUD.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/FZr6JQc.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/6BAwVQL.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 20
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/4RaBc6E.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/zkHHNDd.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/F9aAVZ6.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/mrVJPvr.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/KFYtsAF.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/RVuTwY7.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/p3K1rWt.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/FZA2YWC.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 21
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Pb6kPnw.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/QmBuwQx.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/YEqlpKC.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/uB1Et5G.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/M6HNc2p.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/qhi53Mf.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/LO6dq2K.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/WfBZiTp.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 22
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/PibvTr2.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/O4tpig8.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/OOUIRmZ.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/ZBkuKR7.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/OX3YaQL.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/owL9BF8.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/TSh7Ynz.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/4XChRsG.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 23
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/PfEfE7p.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/otE87bg.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/KlM6JLn.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/F5RU3MW.jpg"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/HUz0ise.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/hv3eXZR.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/aVHLUUy.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/4RLOQRH.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 24
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/vkyyaxh.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 25
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/vDHab2B.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 25
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/GY5ejv4.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 25
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/dCuO7sD.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 25
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/gWlqx2J.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 25
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/LKnask3.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 25
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/Ldt0A1d.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 25
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/e87OrTi.png"
+        - insert:
+            tableName: images
+            columns:
+              - column:
+                  name: cafe_id
+                  value: 25
+              - column:
+                  name: images
+                  value: "https://i.imgur.com/OWsIhLC.png"
