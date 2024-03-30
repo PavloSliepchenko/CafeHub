@@ -37,3 +37,5 @@ databaseChangeLog:
       file: db/changelog/changes/18-add-phone-number-column.yaml
   - include:
       file: db/changelog/changes/19-add-phone-numbers-to-cafes.yaml
+  - include:
+      file: db/changelog/changes/20-fill-in-images-table.yaml
