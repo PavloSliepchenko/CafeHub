@@ -25,6 +25,6 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: score
-                  type: DECIMAL
+                  type: DECIMAL(20,2)
                   constraints:
                     nullable: false

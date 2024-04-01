@@ -42,13 +42,13 @@ databaseChangeLog:
                   type: TIME
               - column:
                   name: score
-                  type: DECIMAL
+                  type: DECIMAL(20,2)
               - column:
                   name: number_of_users_voted
-                  type: DECIMAL
+                  type: DECIMAL(20,2)
               - column:
                   name: total_score
-                  type: DECIMAL
+                  type: DECIMAL(20,2)
               - column:
                   name: url_to_google_maps
                   type: varchar(500)
@@ -78,7 +78,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: average_bill
-                  type: DECIMAL
+                  type: DECIMAL(20,2)
               - column:
                   name: fast_service
                   type: boolean
