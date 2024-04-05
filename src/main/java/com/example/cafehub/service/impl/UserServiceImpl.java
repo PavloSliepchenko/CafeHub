@@ -19,7 +19,6 @@ import com.example.cafehub.model.User;
 import com.example.cafehub.repository.CafeRepository;
 import com.example.cafehub.repository.UserRepository;
 import com.example.cafehub.security.AuthenticationService;
-import com.example.cafehub.security.JwtUtil;
 import com.example.cafehub.service.EmailService;
 import com.example.cafehub.service.UserService;
 import com.example.cafehub.util.CodeGenerator;
@@ -50,7 +49,6 @@ public class UserServiceImpl implements UserService {
     private final EmailService emailService;
     private final CafeMapper cafeMapper;
     private final UserMapper userMapper;
-    private final JwtUtil jwtUtil;
 
     @Override
     public List<UserResponseDto> getAllUsers(Pageable pageable) {
@@ -200,17 +198,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String verifyEmail(String verificationCode) {
-        String homePageUrl = "https://vitalii-fedusov.github.io/CafeHub";
+        StringBuilder homePageUrl = new StringBuilder("https://vitalii-fedusov.github.io/CafeHub");
         Optional<User> userOptional = userRepository.findByVerificationCode(verificationCode);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
             user.setVerified(true);
             user.setVerificationCode("Verified");
             userRepository.save(user);
-            String token = jwtUtil.generateToken(user.getEmail());
-            return homePageUrl + "?accessToken=" + token;
+            String token = authenticationService.getToken(user.getEmail());
+            return homePageUrl.append("?accessToken=").append(token).toString();
         }
-        return homePageUrl;
+        return homePageUrl.toString();
     }
 
     @Override

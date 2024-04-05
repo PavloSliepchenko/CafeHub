@@ -21,8 +21,22 @@ public class AuthenticationService {
                         requestDto.email(),
                         requestDto.password())
         );
-        String token = jwtUtil.generateToken(authentication.getName());
+        String token = getToken(authentication.getName());
         User user = (User) authentication.getPrincipal();
+        return getUserLoginResponseDto(user, token);
+    }
+
+    public UserLoginResponseDto getFreshToken(Authentication authentication) {
+        User user = (User) authentication.getPrincipal();
+        String token = getToken(user.getEmail());
+        return getUserLoginResponseDto(user, token);
+    }
+
+    public String getToken(String userName) {
+        return jwtUtil.generateToken(userName);
+    }
+
+    private UserLoginResponseDto getUserLoginResponseDto(User user, String token) {
         return new UserLoginResponseDto(
                 user.getFirstName(),
                 user.getLastName(),
