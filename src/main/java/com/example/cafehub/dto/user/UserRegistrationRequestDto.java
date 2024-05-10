@@ -4,6 +4,7 @@ import com.example.cafehub.validator.FieldMatch;
 import com.example.cafehub.validator.ValidFirstCapitalLetter;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
@@ -14,7 +15,8 @@ import org.hibernate.validator.constraints.Length;
         message = "Passwords do not match!"
         )
 public class UserRegistrationRequestDto {
-    @Email
+    @Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}",
+            flags = Pattern.Flag.CASE_INSENSITIVE)
     @NotNull
     @Length(max = 32)
     private String email;
