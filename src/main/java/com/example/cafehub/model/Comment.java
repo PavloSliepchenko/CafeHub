@@ -8,6 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -37,6 +38,7 @@ public class Comment {
     @JoinColumn(name = "cafe_id", nullable = false)
     private Cafe cafe;
     private String comment;
+    private BigDecimal score;
     @Column(nullable = false)
     private boolean isDeleted = false;
 }

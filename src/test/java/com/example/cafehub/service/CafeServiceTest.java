@@ -7,13 +7,11 @@ import com.example.cafehub.exception.EntityAlreadyExistsException;
 import com.example.cafehub.exception.EntityNotFoundException;
 import com.example.cafehub.mapper.CafeMapper;
 import com.example.cafehub.model.Cafe;
-import com.example.cafehub.model.Score;
-import com.example.cafehub.model.User;
 import com.example.cafehub.repository.CafeRepository;
-import com.example.cafehub.repository.ScoreRepository;
 import com.example.cafehub.repository.specification.CafeSpecificationBuilder;
 import com.example.cafehub.service.impl.CafeServiceImpl;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
@@ -43,8 +41,6 @@ class CafeServiceTest {
     @Mock
     private CafeSpecificationBuilder specificationBuilder;
     @Mock
-    private ScoreRepository scoreRepository;
-    @Mock
     private CafeRepository cafeRepository;
     @Mock
     private CafeMapper cafeMapper;
@@ -59,6 +55,7 @@ class CafeServiceTest {
         cafe1.setAddress("233rd st");
         cafe1.setCity("Kyiv");
         cafe1.setScore(BigDecimal.valueOf(4));
+        cafe1.setComments(new ArrayList<>());
 
         cafe2 = new Cafe();
         cafe2.setId(2L);
@@ -66,6 +63,7 @@ class CafeServiceTest {
         cafe2.setAddress("134th st");
         cafe2.setCity("Lviv");
         cafe2.setScore(BigDecimal.valueOf(3));
+        cafe2.setComments(new ArrayList<>());
 
         cafe3 = new Cafe();
         cafe3.setId(3L);
@@ -73,24 +71,28 @@ class CafeServiceTest {
         cafe3.setAddress("122nd st");
         cafe3.setCity("Kyiv");
         cafe3.setScore(BigDecimal.valueOf(5));
+        cafe3.setComments(new ArrayList<>());
 
         responseDto1 = new CafeResponseDto();
         responseDto1.setId(cafe1.getId());
         responseDto1.setName(cafe1.getName());
         responseDto1.setAddress(cafe1.getAddress());
         responseDto1.setScore(cafe1.getScore());
+        responseDto1.setComments(new ArrayList<>());
 
         responseDto2 = new CafeResponseDto();
         responseDto2.setId(cafe2.getId());
         responseDto2.setName(cafe2.getName());
         responseDto2.setAddress(cafe2.getAddress());
         responseDto2.setScore(cafe2.getScore());
+        responseDto2.setComments(new ArrayList<>());
 
         responseDto3 = new CafeResponseDto();
         responseDto3.setId(cafe3.getId());
         responseDto3.setName(cafe3.getName());
         responseDto3.setAddress(cafe3.getAddress());
         responseDto3.setScore(cafe3.getScore());
+        responseDto3.setComments(new ArrayList<>());
 
         createCafeDto = new CreateCafeDto();
         createCafeDto.setName("New cafe");
@@ -201,10 +203,8 @@ class CafeServiceTest {
         responseDto2.setAddress(cafe2.getName());
 
         Long cafeId = 2L;
-        Mockito.when(cafeRepository.save(cafe2)).thenReturn(cafe2);
+        Mockito.when(cafeRepository.findById(cafeId)).thenReturn(Optional.of(cafe2));
         Mockito.when(cafeMapper.toDto(cafe2)).thenReturn(responseDto2);
-        Mockito.when(cafeRepository.existsById(cafeId)).thenReturn(true);
-        Mockito.when(cafeMapper.toModel(createCafeDto)).thenReturn(cafe2);
 
         CafeResponseDto actual = cafeService.updateCafeInfo(cafeId, createCafeDto);
 
@@ -216,70 +216,10 @@ class CafeServiceTest {
     @Test
     @DisplayName("Update cafe info. Wrong id. Throws exception")
     void updateCafeInfo_WrongCafeId_ShouldThrowException() {
-        Mockito.when(cafeRepository.existsById(Mockito.anyLong())).thenReturn(false);
+        Mockito.when(cafeRepository.findById(Mockito.anyLong())).thenReturn(Optional.empty());
 
         Assertions.assertThrows(EntityNotFoundException.class,
                 () -> cafeService.updateCafeInfo(45L, createCafeDto));
-    }
-
-    @Test
-    @DisplayName("Set score")
-    void setScore_ValidRequest_ShouldReturnCafeResponseDto() {
-        Long cafeId = 2L;
-        BigDecimal score = BigDecimal.valueOf(5);
-
-        Cafe cafe = new Cafe();
-        cafe.setId(cafeId);
-        cafe.setScore(score);
-        cafe.setNumberOfUsersVoted(BigDecimal.ONE);
-        cafe.setTotalScore(score);
-        cafe.setName(cafe2.getName());
-        cafe.setAddress(cafe2.getAddress());
-        cafe.setCity(cafe2.getCity());
-
-        CafeResponseDto responseDto = new CafeResponseDto();
-        responseDto.setAddress(cafe.getAddress());
-        responseDto.setName(cafe.getName());
-        responseDto.setId(cafe.getId());
-        responseDto.setScore(score);
-
-        Long userId = 4L;
-        cafe2.setNumberOfUsersVoted(BigDecimal.ZERO);
-        cafe2.setTotalScore(BigDecimal.ZERO);
-        Mockito.when(scoreRepository.findByUserIdAndCafeId(userId, cafeId))
-                .thenReturn(Optional.empty());
-        Mockito.when(cafeRepository.findById(cafeId)).thenReturn(Optional.of(cafe2));
-        Mockito.when(cafeRepository.save(cafe)).thenReturn(cafe);
-        Mockito.when(cafeMapper.toDto(cafe)).thenReturn(responseDto);
-
-        CafeResponseDto actual = cafeService.setScore(userId, cafeId, score);
-
-        Assertions.assertEquals(responseDto.getId(), actual.getId());
-        Assertions.assertEquals(responseDto.getScore(), actual.getScore());
-
-        cafe2.setNumberOfUsersVoted(BigDecimal.ONE);
-        cafe2.setTotalScore(score);
-        User user = new User();
-        user.setId(userId);
-        Score scoreEntity = new Score();
-        scoreEntity.setUser(user);
-        scoreEntity.setCafe(cafe2);
-        scoreEntity.setScore(score);
-
-        BigDecimal newScore = BigDecimal.valueOf(4L);
-        cafe.setTotalScore(newScore);
-        cafe.setScore(newScore);
-        responseDto.setScore(cafe.getScore());
-        Mockito.when(scoreRepository.findByUserIdAndCafeId(userId, cafeId))
-                .thenReturn(Optional.of(scoreEntity));
-        Mockito.when(cafeRepository.findById(cafeId)).thenReturn(Optional.of(cafe2));
-        Mockito.when(cafeRepository.save(cafe)).thenReturn(cafe);
-        Mockito.when(cafeMapper.toDto(cafe)).thenReturn(responseDto);
-
-        actual = cafeService.setScore(userId, cafeId, newScore);
-
-        Assertions.assertEquals(responseDto.getId(), actual.getId());
-        Assertions.assertEquals(responseDto.getScore(), actual.getScore());
     }
 
     @Test

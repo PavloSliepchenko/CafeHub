@@ -3,20 +3,15 @@ package com.example.cafehub.controller;
 import com.example.cafehub.dto.cafe.CafeResponseDto;
 import com.example.cafehub.dto.cafe.CafeSearchParametersDto;
 import com.example.cafehub.dto.cafe.CreateCafeDto;
-import com.example.cafehub.model.User;
 import com.example.cafehub.service.CafeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import java.math.BigDecimal;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -85,22 +80,9 @@ public class CafeController {
             description = "Updates cafes info. Available to admin users only")
     public CafeResponseDto updateCafeInfo(
             @PathVariable Long cafeId,
-            @Valid @RequestBody CreateCafeDto createCafeDto
+            @RequestBody CreateCafeDto createCafeDto
     ) {
         return cafeService.updateCafeInfo(cafeId, createCafeDto);
-    }
-
-    @PostMapping(value = "/scores")
-    @PreAuthorize("hasAuthority('USER')")
-    @Operation(summary = "Set a score to cafe",
-            description = "Sets a score to cafe. Available to all authenticated in users")
-    public CafeResponseDto setScore(Authentication authentication,
-                                    @RequestParam Long cafeId,
-                                    @Min(1)
-                                    @Max(5)
-                                    @RequestParam BigDecimal score) {
-        User user = (User) authentication.getPrincipal();
-        return cafeService.setScore(user.getId(), cafeId, score);
     }
 
     @DeleteMapping(value = "/{cafeId}")

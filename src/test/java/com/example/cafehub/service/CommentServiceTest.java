@@ -11,6 +11,7 @@ import com.example.cafehub.model.User;
 import com.example.cafehub.repository.CafeRepository;
 import com.example.cafehub.repository.CommentRepository;
 import com.example.cafehub.service.impl.CommentServiceImpl;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Assertions;
@@ -66,6 +67,8 @@ class CommentServiceTest {
         cafe1.setName("First Point");
         cafe1.setCity("Kyiv");
         cafe1.setAddress("вул. Ярославська 14/20");
+        cafe1.setNumberOfUsersVoted(BigDecimal.ZERO);
+        cafe1.setTotalScore(BigDecimal.ZERO);
 
         cafe2 = new Cafe();
         cafe2.setId(2L);
@@ -222,9 +225,11 @@ class CommentServiceTest {
     void addComment_ValidRequest_ShouldAddComment() {
         CreateCommentRequestDto commentRequestDto = new CreateCommentRequestDto();
         commentRequestDto.setComment("I love the interior of this cafe!");
+        commentRequestDto.setScore(BigDecimal.valueOf(5));
 
         Comment comment = new Comment();
         comment.setComment(commentRequestDto.getComment());
+        comment.setScore(commentRequestDto.getScore());
         comment.setCafe(cafe1);
         comment.setUser(user1);
         comment.setId(7L);
