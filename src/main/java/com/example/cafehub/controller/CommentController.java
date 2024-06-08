@@ -6,6 +6,7 @@ import com.example.cafehub.model.User;
 import com.example.cafehub.service.CommentService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -44,7 +45,7 @@ public class CommentController {
             description = "Adds a new comment to cafe. Available to all authenticated in users")
     public CommentResponseDto addComment(Authentication authentication,
                                          @PathVariable Long cafeId,
-                                         @RequestBody CreateCommentRequestDto commentDto) {
+                                         @RequestBody @Valid CreateCommentRequestDto commentDto) {
         User user = (User) authentication.getPrincipal();
         return commentService.addComment(user.getId(), cafeId, commentDto);
     }

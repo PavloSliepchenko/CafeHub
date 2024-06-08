@@ -39,3 +39,7 @@ databaseChangeLog:
       file: db/changelog/changes/19-add-phone-numbers-to-cafes.yaml
   - include:
       file: db/changelog/changes/20-fill-in-images-table.yaml
+  - include:
+      file: db/changelog/changes/21-add-score-column-to-comments-table.yaml
+  - include:
+      file: db/changelog/changes/22-drop-scores-table.yaml

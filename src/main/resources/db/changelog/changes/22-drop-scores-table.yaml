@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: drop-scores-table
+      author: PavloSliepchenko
+      changes:
+        - dropTable:
+            tableName: scores

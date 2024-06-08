@@ -23,8 +23,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.security.test.context.support.WithUserDetails;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -253,23 +251,6 @@ class CafeControllerTest {
                 .andExpect(jsonPath("$.name").value(createCafeDto.getName()))
                 .andExpect(jsonPath("$.address").value(createCafeDto.getAddress()))
                 .andExpect(jsonPath("$.phoneNumber").value(createCafeDto.getPhoneNumber()));
-    }
-
-    @Test
-    @DisplayName("Set score")
-    @WithUserDetails("second@user.com")
-    @Sql(scripts = "classpath:database/users/add-four-users-to-db.sql",
-            executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD)
-    @Sql(scripts = "classpath:database/users/clear-users-table.sql",
-            executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
-    void setScore_ValidRequest_ShouldSetScore() throws Exception {
-        Long cafeId = 3L;
-        int score = 2;
-
-        mockMvc.perform(post(String.format("/cafes/scores?cafeId=%s&score=%s", cafeId, score)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(cafeId))
-                .andExpect(jsonPath("$.score").value(score));
     }
 
     @Test
