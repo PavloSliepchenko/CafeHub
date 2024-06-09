@@ -120,7 +120,11 @@ public class CommentServiceImpl implements CommentService {
             Cafe cafe = comment.getCafe();
             cafe.setNumberOfUsersVoted(cafe.getNumberOfUsersVoted().subtract(BigDecimal.ONE));
             cafe.setTotalScore(cafe.getTotalScore().subtract(comment.getScore()));
-            cafe.setScore(cafe.getTotalScore().divide(cafe.getNumberOfUsersVoted()));
+            if (cafe.getNumberOfUsersVoted().compareTo(BigDecimal.ZERO) == 0) {
+                cafe.setScore(BigDecimal.ZERO);
+            } else {
+                cafe.setScore(cafe.getTotalScore().divide(cafe.getNumberOfUsersVoted()));
+            }
             cafeRepository.save(cafe);
         }
     }
