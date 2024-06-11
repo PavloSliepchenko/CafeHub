@@ -11,6 +11,7 @@ import com.example.cafehub.repository.CafeRepository;
 import com.example.cafehub.repository.CommentRepository;
 import com.example.cafehub.service.CommentService;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -62,7 +63,8 @@ public class CommentServiceImpl implements CommentService {
         commentEntity = commentRepository.save(commentEntity);
         cafe.setNumberOfUsersVoted(cafe.getNumberOfUsersVoted().add(BigDecimal.ONE));
         cafe.setTotalScore(cafe.getTotalScore().add(commentDto.getScore()));
-        cafe.setScore(cafe.getTotalScore().divide(cafe.getNumberOfUsersVoted()));
+        cafe.setScore(cafe.getTotalScore()
+                .divide(cafe.getNumberOfUsersVoted(), 2, RoundingMode.HALF_UP));
         cafeRepository.save(cafe);
         return commentMapper.toDto(commentEntity);
     }
@@ -80,7 +82,8 @@ public class CommentServiceImpl implements CommentService {
             cafe.setTotalScore(cafe.getTotalScore()
                     .subtract(comment.getScore())
                     .add(commentDto.getScore()));
-            cafe.setScore(cafe.getTotalScore().divide(cafe.getNumberOfUsersVoted()));
+            cafe.setScore(cafe.getTotalScore()
+                    .divide(cafe.getNumberOfUsersVoted(), 2, RoundingMode.HALF_UP));
             cafeRepository.save(cafe);
             comment.setScore(commentDto.getScore());
         }
@@ -123,7 +126,8 @@ public class CommentServiceImpl implements CommentService {
             if (cafe.getNumberOfUsersVoted().compareTo(BigDecimal.ZERO) == 0) {
                 cafe.setScore(BigDecimal.ZERO);
             } else {
-                cafe.setScore(cafe.getTotalScore().divide(cafe.getNumberOfUsersVoted()));
+                cafe.setScore(cafe.getTotalScore()
+                        .divide(cafe.getNumberOfUsersVoted(), 2, RoundingMode.HALF_UP));
             }
             cafeRepository.save(cafe);
         }
