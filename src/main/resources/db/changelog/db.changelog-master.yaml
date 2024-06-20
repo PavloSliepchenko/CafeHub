@@ -43,3 +43,5 @@ databaseChangeLog:
       file: db/changelog/changes/21-add-score-column-to-comments-table.yaml
   - include:
       file: db/changelog/changes/22-drop-scores-table.yaml
+  - include:
+      file: db/changelog/changes/23-add-profile_picture-and-delete_hash-columns-to-users-table.yaml

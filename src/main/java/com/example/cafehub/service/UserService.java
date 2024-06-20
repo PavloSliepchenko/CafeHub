@@ -12,6 +12,7 @@ import com.example.cafehub.dto.user.UserWithRoleResponseDto;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface UserService {
     List<UserResponseDto> getAllUsers(Pageable pageable);
@@ -34,6 +35,10 @@ public interface UserService {
     List<CafeResponseDto> removeFavoriteCafe(Long userId, Long cafeId);
 
     String verifyEmail(String verificationCode);
+
+    UserResponseDto setProfilePicture(Long userId, MultipartFile imageFile);
+
+    UserResponseDto deleteProfilePicture(Long userId);
 
     void resetPassword(PasswordResetDto resetDto);
 

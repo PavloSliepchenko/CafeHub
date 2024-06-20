@@ -51,6 +51,8 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "cafe_id", referencedColumnName = "id")
     )
     private List<Cafe> favorite;
+    private String profilePictureUrl;
+    private String deleteHash;
     @Column(nullable = false)
     private String verificationCode;
     @Column(nullable = false)

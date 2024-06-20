@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-profile_picture-and-delete_hash-columns-to-users-table
+      author: PavloSliepchenko
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: profile_picture_url
+                  type: varchar(255)
+              - column:
+                  name: delete_hash
+                  type: varchar(255)
