@@ -9,4 +9,5 @@ public class UserWithRoleResponseDto {
     private String firstName;
     private String lastName;
     private String role;
+    private String profilePictureUrl;
 }

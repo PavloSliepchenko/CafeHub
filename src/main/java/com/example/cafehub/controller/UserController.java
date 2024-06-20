@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
@@ -120,6 +121,26 @@ public class UserController {
             description = "Verifies user's email with verification code")
     public RedirectView verify(@RequestParam String verificationCode) {
         return new RedirectView(userService.verifyEmail(verificationCode));
+    }
+
+    @PostMapping(value = "/profilePicture")
+    @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Upload a profile picture",
+            description = "Allows to upload a profile picture. If the picture was uploaded before "
+                    + "then it will be replaced with a new one")
+    public UserResponseDto setProfilePicture(Authentication authentication,
+                                             @RequestParam("imageFile") MultipartFile file) {
+        User user = (User) authentication.getPrincipal();
+        return userService.setProfilePicture(user.getId(), file);
+    }
+
+    @DeleteMapping(value = "/profilePicture")
+    @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Delete a profile picture",
+            description = "Allows to delete a profile picture")
+    public UserResponseDto deleteProfilePicture(Authentication authentication) {
+        User user = (User) authentication.getPrincipal();
+        return userService.deleteProfilePicture(user.getId());
     }
 
     @DeleteMapping(value = "/{userId}")

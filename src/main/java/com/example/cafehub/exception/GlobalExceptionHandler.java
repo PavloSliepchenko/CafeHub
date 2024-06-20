@@ -60,8 +60,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({RegistrationException.class, EntityAlreadyExistsException.class})
     public ResponseEntity<Object> handleRegistrationException(
-            Exception ex,
-            WebRequest request
+            Exception ex
     ) {
         Body body = new Body();
         body.timeStamp = LocalDateTime.now();
@@ -72,8 +71,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<Object> handleAccessDeniedException(
-            Exception ex,
-            WebRequest request
+            Exception ex
     ) {
         Body body = new Body();
         body.timeStamp = LocalDateTime.now();
@@ -84,8 +82,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<Object> handleEntityNotFoundException(
-            Exception ex,
-            WebRequest request
+            Exception ex
     ) {
         Body body = new Body();
         body.timeStamp = LocalDateTime.now();
@@ -94,10 +91,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler(EmailException.class)
-    public ResponseEntity<Object> handleEmailException(
-            Exception ex,
-            WebRequest request
+    @ExceptionHandler({EmailException.class, ProfilePictureException.class})
+    public ResponseEntity<Object> handleExternalApiExceptions(
+            Exception ex
     ) {
         Body body = new Body();
         body.timeStamp = LocalDateTime.now();
@@ -108,8 +104,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<Object> handleRuntimeException(
-            Exception ex,
-            WebRequest request
+            Exception ex
     ) {
         Body body = new Body();
         body.timeStamp = LocalDateTime.now();

@@ -11,6 +11,7 @@ import com.example.cafehub.dto.user.UserResponseDto;
 import com.example.cafehub.dto.user.UserWithRoleResponseDto;
 import com.example.cafehub.exception.EntityAlreadyExistsException;
 import com.example.cafehub.exception.EntityNotFoundException;
+import com.example.cafehub.exception.ProfilePictureException;
 import com.example.cafehub.exception.RegistrationException;
 import com.example.cafehub.mapper.CafeMapper;
 import com.example.cafehub.mapper.UserMapper;
@@ -23,20 +24,27 @@ import com.example.cafehub.service.EmailService;
 import com.example.cafehub.service.UserService;
 import com.example.cafehub.util.CodeGenerator;
 import jakarta.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+import kong.unirest.HttpResponse;
+import kong.unirest.JsonNode;
+import kong.unirest.Unirest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private static final User.Role DEFAULT_ROLE = User.Role.USER;
+    private static final int SUCCESS_STATUS_CODE = 200;
     private static final Random random = new Random();
     private final AuthenticationService authenticationService;
     @Qualifier("passwordGenerator")
@@ -49,6 +57,8 @@ public class UserServiceImpl implements UserService {
     private final EmailService emailService;
     private final CafeMapper cafeMapper;
     private final UserMapper userMapper;
+    @Value("${imgur.client.id}")
+    private String clientId;
 
     @Override
     public List<UserResponseDto> getAllUsers(Pageable pageable) {
@@ -209,6 +219,55 @@ public class UserServiceImpl implements UserService {
             return homePageUrl.append("?accessToken=").append(token).toString();
         }
         return homePageUrl.toString();
+    }
+
+    @Override
+    public UserResponseDto setProfilePicture(Long userId, MultipartFile imageFile) {
+        String imgurUploadUrl = "https://api.imgur.com/3/upload";
+        String jsonKey = "data";
+        User user = getUserById(userId);
+        if (user.getProfilePictureUrl() != null && user.getDeleteHash() != null) {
+            deleteProfilePicture(userId);
+        }
+        try {
+            File tempFile = File.createTempFile("upload-", imageFile.getOriginalFilename());
+            imageFile.transferTo(tempFile);
+            HttpResponse<JsonNode> response = Unirest.post(imgurUploadUrl)
+                    .header("Authorization", "Client-ID " + clientId)
+                    .field("image", tempFile)
+                    .asJson();
+            if (response.getStatus() == SUCCESS_STATUS_CODE) {
+                String imageUrl = response.getBody()
+                        .getObject()
+                        .getJSONObject(jsonKey)
+                        .getString("link");
+                String deleteHash = response.getBody()
+                        .getObject()
+                        .getJSONObject(jsonKey)
+                        .getString("deletehash");
+                user.setProfilePictureUrl(imageUrl);
+                user.setDeleteHash(deleteHash);
+                return userMapper.toDto(userRepository.save(user));
+            }
+        } catch (Exception e) {
+            throw new ProfilePictureException("Something went wrong while uploading an image");
+        }
+        throw new ProfilePictureException("Failed to upload the image");
+    }
+
+    @Override
+    public UserResponseDto deleteProfilePicture(Long userId) {
+        User user = getUserById(userId);
+        String imgurDeleteUrl = "https://api.imgur.com/3/image/";
+        HttpResponse<JsonNode> response = Unirest.delete(imgurDeleteUrl + user.getDeleteHash())
+                .header("Authorization", "Client-ID " + clientId)
+                .asJson();
+        if (response.getStatus() == SUCCESS_STATUS_CODE) {
+            user.setProfilePictureUrl(null);
+            user.setDeleteHash(null);
+            return userMapper.toDto(userRepository.save(user));
+        }
+        throw new ProfilePictureException("Failed to delete the profile picture");
     }
 
     @Override
