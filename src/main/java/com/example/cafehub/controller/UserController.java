@@ -126,21 +126,32 @@ public class UserController {
     @PostMapping(value = "/profilePicture")
     @PreAuthorize("hasAuthority('USER')")
     @Operation(summary = "Upload a profile picture",
-            description = "Allows to upload a profile picture. If the picture was uploaded before "
-                    + "then it will be replaced with a new one")
-    public UserResponseDto setProfilePicture(Authentication authentication,
+            description = "Allows to upload a profile picture")
+    public UserResponseDto addProfilePicture(Authentication authentication,
                                              @RequestParam("imageFile") MultipartFile file) {
         User user = (User) authentication.getPrincipal();
-        return userService.setProfilePicture(user.getId(), file);
+        return userService.addProfilePicture(user.getId(), file);
     }
 
-    @DeleteMapping(value = "/profilePicture")
+    @DeleteMapping(value = "/profilePicture/{profilePictureId}")
     @PreAuthorize("hasAuthority('USER')")
     @Operation(summary = "Delete a profile picture",
             description = "Allows to delete a profile picture")
-    public UserResponseDto deleteProfilePicture(Authentication authentication) {
+    public UserResponseDto deleteProfilePicture(Authentication authentication,
+                                                @PathVariable Long profilePictureId) {
         User user = (User) authentication.getPrincipal();
-        return userService.deleteProfilePicture(user.getId());
+        return userService.deleteProfilePicture(user.getId(), profilePictureId);
+    }
+
+    @PostMapping(value = "/profilePicture/{profilePictureId}")
+    @PreAuthorize("hasAuthority('USER')")
+    @Operation(summary = "Set a profile picture",
+            description = "Allows you to set one of the uploaded profile pictures "
+                    + "as the main picture using its ID")
+    public UserResponseDto setProfilePicture(Authentication authentication,
+                                             @PathVariable Long profilePictureId) {
+        User user = (User) authentication.getPrincipal();
+        return userService.setProfilePicture(user.getId(), profilePictureId);
     }
 
     @DeleteMapping(value = "/{userId}")

@@ -36,9 +36,11 @@ public interface UserService {
 
     String verifyEmail(String verificationCode);
 
-    UserResponseDto setProfilePicture(Long userId, MultipartFile imageFile);
+    UserResponseDto addProfilePicture(Long userId, MultipartFile imageFile);
 
-    UserResponseDto deleteProfilePicture(Long userId);
+    UserResponseDto deleteProfilePicture(Long userId, Long profilePictureId);
+
+    UserResponseDto setProfilePicture(Long userId, Long profilePictureId);
 
     void resetPassword(PasswordResetDto resetDto);
 

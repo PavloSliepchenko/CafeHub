@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-profile_pictures-table
+      author: PavloSliepchenko
+      changes:
+        - createTable:
+            tableName: profile_pictures
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: profile_picture_url
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: delete_hash
+                  type: varchar(255)
+                  constraints:
+                    nullable: false

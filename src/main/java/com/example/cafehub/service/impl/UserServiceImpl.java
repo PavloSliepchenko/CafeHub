@@ -16,8 +16,10 @@ import com.example.cafehub.exception.RegistrationException;
 import com.example.cafehub.mapper.CafeMapper;
 import com.example.cafehub.mapper.UserMapper;
 import com.example.cafehub.model.Cafe;
+import com.example.cafehub.model.ProfilePicture;
 import com.example.cafehub.model.User;
 import com.example.cafehub.repository.CafeRepository;
+import com.example.cafehub.repository.ProfilePictureRepository;
 import com.example.cafehub.repository.UserRepository;
 import com.example.cafehub.security.AuthenticationService;
 import com.example.cafehub.service.EmailService;
@@ -46,6 +48,7 @@ public class UserServiceImpl implements UserService {
     private static final User.Role DEFAULT_ROLE = User.Role.USER;
     private static final int SUCCESS_STATUS_CODE = 200;
     private static final Random random = new Random();
+    private final ProfilePictureRepository profilePictureRepository;
     private final AuthenticationService authenticationService;
     @Qualifier("passwordGenerator")
     private final CodeGenerator passwordGenerator;
@@ -222,13 +225,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponseDto setProfilePicture(Long userId, MultipartFile imageFile) {
+    public UserResponseDto addProfilePicture(Long userId, MultipartFile imageFile) {
         String imgurUploadUrl = "https://api.imgur.com/3/upload";
         String jsonKey = "data";
         User user = getUserById(userId);
-        if (user.getProfilePictureUrl() != null && user.getDeleteHash() != null) {
-            deleteProfilePicture(userId);
-        }
         try {
             File tempFile = File.createTempFile("upload-", imageFile.getOriginalFilename());
             imageFile.transferTo(tempFile);
@@ -245,8 +245,12 @@ public class UserServiceImpl implements UserService {
                         .getObject()
                         .getJSONObject(jsonKey)
                         .getString("deletehash");
-                user.setProfilePictureUrl(imageUrl);
-                user.setDeleteHash(deleteHash);
+                ProfilePicture profilePicture = new ProfilePicture();
+                profilePicture.setProfilePictureUrl(imageUrl);
+                profilePicture.setDeleteHash(deleteHash);
+                profilePictureRepository.save(profilePicture);
+                user.getProfilePictureUrls().add(profilePicture);
+                user.setSelectedProfilePictureId(profilePicture.getId());
                 return userMapper.toDto(userRepository.save(user));
             }
         } catch (Exception e) {
@@ -256,18 +260,31 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponseDto deleteProfilePicture(Long userId) {
+    public UserResponseDto deleteProfilePicture(Long userId, Long profilePictureId) {
         User user = getUserById(userId);
+        ProfilePicture profilePicture = getProfilePicture(user, profilePictureId);
         String imgurDeleteUrl = "https://api.imgur.com/3/image/";
-        HttpResponse<JsonNode> response = Unirest.delete(imgurDeleteUrl + user.getDeleteHash())
-                .header("Authorization", "Client-ID " + clientId)
-                .asJson();
+        HttpResponse<JsonNode> response =
+                Unirest.delete(imgurDeleteUrl + profilePicture.getDeleteHash())
+                        .header("Authorization", "Client-ID " + clientId)
+                        .asJson();
         if (response.getStatus() == SUCCESS_STATUS_CODE) {
-            user.setProfilePictureUrl(null);
-            user.setDeleteHash(null);
+            user.getProfilePictureUrls().remove(profilePicture);
+            if (profilePicture.getId().equals(user.getSelectedProfilePictureId())) {
+                user.setSelectedProfilePictureId(null);
+            }
+            profilePictureRepository.delete(profilePicture);
             return userMapper.toDto(userRepository.save(user));
         }
         throw new ProfilePictureException("Failed to delete the profile picture");
+    }
+
+    @Override
+    public UserResponseDto setProfilePicture(Long userId, Long profilePictureId) {
+        User user = getUserById(userId);
+        ProfilePicture profilePicture = getProfilePicture(user, profilePictureId);
+        user.setSelectedProfilePictureId(profilePicture.getId());
+        return userMapper.toDto(userRepository.save(user));
     }
 
     @Override
@@ -305,5 +322,14 @@ public class UserServiceImpl implements UserService {
             verificationCode = verificationCodeGenerator.generateCode(random.nextInt(10, 25));
         } while (userRepository.findByVerificationCode(verificationCode).isPresent());
         return verificationCode;
+    }
+
+    private ProfilePicture getProfilePicture(User user, Long profilePictureId) {
+        return user.getProfilePictureUrls().stream()
+                .filter(e -> e.getId().equals(profilePictureId))
+                .findFirst().orElseThrow(() ->
+                        new EntityNotFoundException(
+                                String.format("User with id %s doesn't have picture with id %s",
+                                        user.getId(), profilePictureId)));
     }
 }

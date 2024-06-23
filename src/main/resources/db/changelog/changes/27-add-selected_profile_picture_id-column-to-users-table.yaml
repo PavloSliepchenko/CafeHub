@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-selected_profile_picture_id-column-to-users-table
+      author: PavloSliepchenko
+      changes:
+        - addColumn:
+            tableName: users
+            columns:
+              - column:
+                  name: selected_profile_picture_id
+                  type: bigint
