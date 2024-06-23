@@ -51,8 +51,17 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "cafe_id", referencedColumnName = "id")
     )
     private List<Cafe> favorite;
-    private String profilePictureUrl;
-    private String deleteHash;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_profile_pictures",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "profile_picture_id",
+                    referencedColumnName = "id")
+    )
+    private List<ProfilePicture> profilePictureUrls;
+    private Long selectedProfilePictureId;
     @Column(nullable = false)
     private String verificationCode;
     @Column(nullable = false)

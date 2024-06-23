@@ -45,3 +45,11 @@ databaseChangeLog:
       file: db/changelog/changes/22-drop-scores-table.yaml
   - include:
       file: db/changelog/changes/23-add-profile_picture-and-delete_hash-columns-to-users-table.yaml
+  - include:
+      file: db/changelog/changes/24-remove-columns-from-user-table.yaml
+  - include:
+      file: db/changelog/changes/25-create-profile_pictures-table.yaml
+  - include:
+      file: db/changelog/changes/26-create-users_profile_pictures-table.yaml
+  - include:
+      file: db/changelog/changes/27-add-selected_profile_picture_id-column-to-users-table.yaml

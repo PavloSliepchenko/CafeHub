@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: remove-columns-from-user-table
+      author: PavloSliepchenko
+      changes:
+        - dropColumn:
+            tableName: users
+            columnName: profile_picture_url
+        - dropColumn:
+            tableName: users
+            columnName: delete_hash
